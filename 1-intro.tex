@@ -1,0 +1,102 @@
+\section{Introduction}
+
+The emergence of Social Media platform has revolutionized dissemination of
+information via its great ease in inforamtion delivery, accessing and filtering. 
+In Social Media, pieces of information, posted by users spontaneously, propagate
+along social relationships between users, explict or implict, forming cascade dynamics.
+Modeling cascade dynamics is the fundamental to understand information
+propagation and launch series of social applictions, i.e., viral marketing, popularity
+prediction and rumor detection. 
+
+The key to cascade dynamics modeling is to find a well-defined function in
+hypothesis space based on observed cascades. Existed methods for this problem
+fall into three main paradigms: pairwise, nodewise and eventwise modeling. The
+majority works in cascade dynamics modeling focus on pairwise modeling,
+defining the propagation probability of information between all pairs of
+users~\cite{SaitoPredDiffusionProb08,goyal2010learning,gomez2013modeling}.
+However, pairwise models suffer severe overfitting and overrepresentation
+problems especially in sparse social data, proved in \cite{WangAAAI15}.
+Nodewise modeling learn latent user-specific characteristics instead of pairwise
+manners, effectively combating overfitting and overrepresentation problems.
+Bourigault et.al.~\cite{bourigault2016representation} learn user-specific
+latent space in Independent Cascade (IC) model. Wang et.al~\cite{WangAAAI15}
+capture users' influence and susceptibility in latent space and define
+propagation probability according to users latent characteristics.
+Kurashima et.al.~\cite{KurashimaKDD14} embeded users into low-dimensional
+visualization space in Continous Time Independent Cascade (CTIC) model. But
+nodewise models require strong prior knowledge on generation processes of
+cascades in order to better fit the observations. Recently, eventwise models
+received great success in modeling sequence data. 
+
+Eventwise methods aims to learn history embedding in order to model the
+generation of next event, e.g., cascade. 
+Manavoglu~\cite{Manavoglu2003userbehaviormodels} propose users behavior
+generation method based on maxent and Markov mixture model. Recently, the
+efficient way of eventwise modeling can be achieved by Recurrent Neural Network
+(RNN)~\cite{bengio2003neural,goldberg2014word2vec,mikolov2010recurrent,sundermeyer2012lstm}.
+Du et.al.~\cite{DuKDD2016} proposed a Recurrent Marked Temporal Point Process
+(RMTPP) for event streams. The outputs of hidden layer in Recurrent Neural
+Network (RNN) represents the embedding of the event histories,
+then parameterizing the random process. The benefits of eventwise modeling are
+two folds: 1) avoiding strong prior knowledge on models and networks with
+respect to different observed cascades; 2) enlarging the functional space when
+searching the optimal cascade dynamics models, which may have great probability
+to better model cascade dynamics. 
+
+Despite of advantages in eventwise modeling, the traditional sequence models
+may meet ``crossing dependency'' problem in cascade dynamics modeling.
+The crossing dependencies problem is mainly caused by tree structure of
+propagation. Fig.~\ref{fig:mot} shows two typical crossing dependency
+cases in practical. For modeling dependence between 1st and 3rd event, we must
+use redundant information passing from 2nd event, called
+``redundant modeling''. If we abandon useful information inherited by 3rd
+event when modeling the 4th event, the generation of 5th event would lose
+useful information from 3rd event, called ``cut-off modeling''. Crossing
+dependency problems limit the efficiency of sequence modeling.
+
+\begin{figure}[ht!]
+\label{fig:mot}
+\centering
+\includegraphics[width=0.45\textwidth]{figs/mot.eps}
+\caption{Tree structure of propagation and crossing dependency problems in
+sequence modeling. For modeling dependence between 1st and 3rd event, we must
+use redundant information passing from 2nd event, called
+``redundant modeling''. If we abandon useful information inherited by 3rd
+event when modeling the 4th event, the generation of 5th event would lose
+useful information from 3rd event, called ``cut-off modeling''.
+}
+\end{figure}
+
+In this paper, we propose a \textbf{C}ascade d\textbf{Y}namics modeling with
+\textbf{A}ttentio\textbf{N}-based RNN, named (CYAN-RNN). We construct a pooling
+layer above the output of hidden layer in RNN, aggregating event embedding in
+history. The weights in pooling layer pointing to each historical event
+embedding refers to connections between current event and history. We choose
+attention mechanism~\cite{bahdanau2014neural} to realize the pooling layer,
+automatically learned the connection weights. The benifits of our proposed model
+are three-fold: 1) We propose a eventwise method, using sequence modeling, for
+cascade dynamics modeling; 2) We point out crossing dependency problem in
+traditional sequence modeling when model cascade dynamics. Thus, we
+proposed CYAN-RNN to solve the problem; 3) We conduct experiments on synthetic
+and real-world datasets to show that our model consistently outperform than
+previous modeling methods in cascade dynamics modeling.
+
+% to limit hypothesis space 
+% 
+% require strong prior knowledge on generation of cascade data in
+% order to determine specific form of cascade model as the limitation of
+% hypothesis space.
+
+% To overcome the drawbacks in pairwise modeling, n
+% 
+% Nodewise modeling and
+% eventwise modeling.
+% 
+% Existed methods for this problem
+% fall into three main paradigms. 
+
+% In Social Media, users can post  information spontaneously, spreading 
+% 
+% The emergence of Social Media platform has motivated a large mount of
+% hot researches, including Social Network Analysis, Marketing and Information
+% Propagation. 

@@ -1,0 +1,31 @@
+\section{Conclusion}
+
+In this paper, we present the cascade dynamics modeling with attention-based
+RNN. As we know, it is a prior attempt on CDM based on RNN, which embed
+historical propagations into vectors and then determine the next propagation sequentially. 
+Instead of traditional interpersonal influence modeling, RNN can
+be used to discover complex dependencies and patterns between the following
+propagation and current histories. 
+% Instead of traditional interpersonal influence modeling, sequential modeling can
+% be used to discover dependencies and patterns between the following propagation and
+% current histories. 
+However, RNN suffers crossing dependency problem when applying
+in CDM. To solve the problem, we propose attention mechanism
+above hidden units of RNN, named CYAN-RNN, aggregating all current historical
+embeddings. Thus, the generation of next propagation can directly depend on all
+current histories instead of transitive dependent way. Moreover, we propose
+CYAN-RNN(cov) to construct coverage on attention mechanism in order to solve
+over-dependent and under-dependent problem existed in CYAN-RNN. In experiments,
+we evaluate the effectiveness of our proposed model on both synthetic and real
+datasets. Experimental results demonstrate that our proposed models can
+consistently outperform compared modeling methods at both predicition tasks of
+next activated user and time. 
+
+four synthetic datasets
+produced from different networks and propagation models and one real dataset. 
+
+
+% crossing-dependency way. We propose CYAN-RNN 
+% 
+% Based on RNN, the proposed model can embed historical propagations
+% into vectors and the next propagation 

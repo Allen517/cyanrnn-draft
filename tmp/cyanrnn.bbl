@@ -1,0 +1,161 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Bahdanau \bgroup \em et al.\egroup
+  }{2014}]{bahdanau2014neural}
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock {\em arXiv preprint arXiv:1409.0473}, 2014.
+
+\bibitem[\protect\citeauthoryear{Bengio \bgroup \em et al.\egroup
+  }{2003}]{bengio2003neural}
+Yoshua Bengio, R{\'e}jean Ducharme, Pascal Vincent, and Christian Jauvin.
+\newblock A neural probabilistic language model, 2003.
+
+\bibitem[\protect\citeauthoryear{Bourigault \bgroup \em et al.\egroup
+  }{2016}]{bourigault2016representation}
+Simon Bourigault, Sylvain Lamprier, and Patrick Gallinari.
+\newblock Representation learning for information diffusion through social
+  networks: an embedded cascade model.
+\newblock In {\em Proceedings of the Ninth ACM International Conference on Web
+  Search and Data Mining}, pages 573--582. ACM, 2016.
+
+\bibitem[\protect\citeauthoryear{Chauvin and
+  Rumelhart}{1995}]{chauvin1995backpropagation}
+Yves Chauvin and David~E Rumelhart.
+\newblock {\em Backpropagation: theory, architectures, and applications}.
+\newblock Psychology Press, 1995.
+
+\bibitem[\protect\citeauthoryear{Chung \bgroup \em et al.\egroup
+  }{2014}]{chung2014empirical}
+Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, and Yoshua Bengio.
+\newblock Empirical evaluation of gated recurrent neural networks on sequence
+  modeling.
+\newblock {\em arXiv preprint arXiv:1412.3555}, 2014.
+
+\bibitem[\protect\citeauthoryear{Du \bgroup \em et al.\egroup
+  }{2016}]{DuKDD2016}
+Nan Du, Hanjun Dai, Rakshit Trivedi, Utkarsh Upadhyay, Manuel Gomez-Rodriguez,
+  and Le~Song.
+\newblock Recurrent marked temporal point processes: Embedding event history to
+  vector.
+\newblock In {\em Proceedings of the 22nd ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 1555--1564, 2016.
+
+\bibitem[\protect\citeauthoryear{Erd\H{o}s and R{\'e}nyi}{1960}]{Erdos60}
+P.~Erd\H{o}s and A~R{\'e}nyi.
+\newblock On the evolution of random graphs.
+\newblock In {\em Publication of the Mathematical Institute of the Hungarian
+  Academy of Sciences}, pages 17--61, 1960.
+
+\bibitem[\protect\citeauthoryear{Goldberg and
+  Levy}{2014}]{goldberg2014word2vec}
+Yoav Goldberg and Omer Levy.
+\newblock word2vec explained: deriving mikolov et al.'s negative-sampling
+  word-embedding method.
+\newblock {\em arXiv preprint arXiv:1402.3722}, 2014.
+
+\bibitem[\protect\citeauthoryear{Gomez-Rodriguez \bgroup \em et al.\egroup
+  }{2013}]{gomez2013modeling}
+Manuel Gomez-Rodriguez, Jure Leskovec, and Bernhard Schlkopf.
+\newblock Modeling information propagation with survival theory.
+\newblock In {\em Proceedings of the 30th International Conference on Machine
+  Learning}, volume~28, pages 666--674, 2013.
+
+\bibitem[\protect\citeauthoryear{Goyal \bgroup \em et al.\egroup
+  }{2010}]{goyal2010learning}
+Amit Goyal, Francesco Bonchi, and Laks~VS Lakshmanan.
+\newblock Learning influence probabilities in social networks.
+\newblock In {\em Proceedings of the third ACM international conference on Web
+  search and data mining}, pages 241--250. ACM, 2010.
+
+\bibitem[\protect\citeauthoryear{Hawkes}{1971}]{hawkes1971spectra}
+Alan~G Hawkes.
+\newblock Spectra of some self-exciting and mutually exciting point processes.
+\newblock {\em Biometrika}, 58(1):83--90, 1971.
+
+\bibitem[\protect\citeauthoryear{Henaff \bgroup \em et al.\egroup
+  }{2016}]{henaff2016orthogonal}
+Mikael Henaff, Arthur Szlam, and Yann LeCun.
+\newblock Orthogonal rnns and long-memory tasks.
+\newblock {\em arXiv preprint arXiv:1602.06662}, 2016.
+
+\bibitem[\protect\citeauthoryear{Kingma and Adam}{2015}]{kingma2015method}
+Diederik~P Kingma and Jimmy~Ba Adam.
+\newblock Adam: A method for stochastic optimization.
+\newblock In {\em International Conference on Learning Representation}, 2015.
+
+\bibitem[\protect\citeauthoryear{Kurashima \bgroup \em et al.\egroup
+  }{2014}]{KurashimaKDD14}
+Takeshi Kurashima, Tomoharu Iwata, Noriko Takaya, and Hiroshi Sawada.
+\newblock Probabilistic latent network visualization: Inferring and embedding
+  diffusion networks.
+\newblock In {\em Proceedings of the 20th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '14, pages 1236--1245, New York,
+  NY, USA, 2014. ACM.
+
+\bibitem[\protect\citeauthoryear{Leskovec and Faloutsos}{2007}]{LeskovecICML07}
+Jure Leskovec and Christos Faloutsos.
+\newblock Scalable modeling of real graphs using kronecker multiplication.
+\newblock In {\em Proceedings of the 24th International Conference on Machine
+  Learning}, ICML '07, pages 497--504, New York, NY, USA, 2007. ACM.
+
+\bibitem[\protect\citeauthoryear{Manavoglu \bgroup \em et al.\egroup
+  }{2003}]{Manavoglu2003userbehaviormodels}
+Eren Manavoglu, Dmitry Pavlov, and C.~Lee Giles.
+\newblock Probabilistic user behavior models.
+\newblock In {\em IEEE International Conference on Data Mining}, pages
+  203--210, 2003.
+
+\bibitem[\protect\citeauthoryear{Mikolov \bgroup \em et al.\egroup
+  }{2010}]{mikolov2010recurrent}
+Tomas Mikolov, Martin Karafi{\'a}t, Lukas Burget, Jan Cernock{\`y}, and Sanjeev
+  Khudanpur.
+\newblock Recurrent neural network based language model.
+\newblock In {\em INTERSPEECH}, volume~2, page~3, 2010.
+
+\bibitem[\protect\citeauthoryear{Prechelt}{1998}]{prechelt1998automatic}
+Lutz Prechelt.
+\newblock Automatic early stopping using cross validation: quantifying the
+  criteria.
+\newblock {\em Neural Networks}, 11(4):761--767, 1998.
+
+\bibitem[\protect\citeauthoryear{Saito \bgroup \em et al.\egroup
+  }{2008}]{SaitoPredDiffusionProb08}
+Kazumi Saito, Ryohei Nakano, and Masahiro Kimura.
+\newblock Prediction of information diffusion probabilities for independent
+  cascade model.
+\newblock In {\em Knowledge-Based Intelligent Information \& Engineering
+  Systems}, pages 67--75, 2008.
+
+\bibitem[\protect\citeauthoryear{Sundermeyer \bgroup \em et al.\egroup
+  }{2012}]{sundermeyer2012lstm}
+Martin Sundermeyer, Ralf Schl{\"u}ter, and Hermann Ney.
+\newblock Lstm neural networks for language modeling.
+\newblock In {\em INTERSPEECH}, pages 194--197, 2012.
+
+\bibitem[\protect\citeauthoryear{Tu \bgroup \em et al.\egroup
+  }{2016}]{tu2016modeling}
+Zhaopeng Tu, Zhengdong Lu, Yang Liu, Xiaohua Liu, and Hang Li.
+\newblock Modeling coverage for neural machine translation.
+\newblock {\em ArXiv eprints, January}, 2016.
+
+\bibitem[\protect\citeauthoryear{Vere-Jones}{1988}]{vere1988introduction}
+D~Vere-Jones.
+\newblock An introduction to the theory of point processes.
+\newblock {\em Springer Ser. Statist., Springer, New York}, 1988.
+
+\bibitem[\protect\citeauthoryear{Voorhees}{1999}]{voorhees1999trec}
+Ellen~M. Voorhees.
+\newblock The trec8 question answering track report.
+\newblock In {\em Text REtrieval Conference}, 1999.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2015}]{WangAAAI15}
+Yongqing Wang, Huawei Shen, Shenghua Liu, and Xueqi Cheng.
+\newblock Learning user-specific latent influence and susceptibility from
+  information cascades.
+\newblock In {\em Proceedings of the 29th AAAI Conference on Artificial
+  Intelligence}, pages 477--483, 2015.
+
+\end{thebibliography}

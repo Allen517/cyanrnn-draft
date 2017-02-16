@@ -1,0 +1,437 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  16 FEB 2017 22:30
+entering extended mode
+ restricted \write18 enabled.
+ Source specials enabled.
+ %&-line parsing enabled.
+**cyanrnn.tex
+(./cyanrnn.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+IJCAI-17 Instructions for Authors
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./ijcai17.sty
+Conference Style, version of 6 September 1995 (revised Nov 2010)
+\titlebox=\skip43
+Named Citation Style, version of 30 November 1994
+) (/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+(/usr/local/install/texlive/2013/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2013/04/29 v0.96 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen107
+))
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks21
+\float@box=\box28
+\@float@everytoks=\toks22
+\@floatcapt=\box29
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks23
+\c@algorithm=\count101
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/algorithms/algorithmic.st
+y
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count102
+\c@ALC@line=\count103
+\c@ALC@rem=\count104
+\c@ALC@depth=\count105
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
+) (/usr/local/install/texlive/2013/texmf-dist/tex/latex/mdwtools/mdwlist.sty
+Package: mdwlist 1996/05/02 1.1 Various list-related things
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen116
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: xetex.def on input line 130.
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen117
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen118
+\subfiglabelskip=\skip52
+\c@subfigure=\count106
+\c@lofdepth=\count107
+\c@subtable=\count108
+\c@lotdepth=\count109
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip53
+\subfig@bottom=\skip54
+) (/usr/local/install/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks24
+)
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/threeparttable/threepartt
+able.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box30
+) (./cyanrnn.aux)
+\openout1 = `cyanrnn.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 60.
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+
+(./0-abstract.tex) (./1-intro.tex
+File: figs/mot.eps Graphic file (type eps)
+ <figs/mot.eps>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
+) (./2-model.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+]
+Underfull \hbox (badness 1888) in paragraph at lines 40--47
+[][]\OT1/ptm/m/n/10 However, RNN suf-fers cross-ing de-pen-dency prob-lem
+ []
+
+File: figs/cyanrnn_framework.png Graphic file (type QTm)
+<use  "figs/cyanrnn_framework.png" >
+Underfull \hbox (badness 1253) in paragraph at lines 91--91
+[][]\OT1/ptm/m/n/10 Figure 2: The ar-chi-tec-ture of CYAN-RNN. The fig-ure
+ []
+
+[2]
+File: figs/att.png Graphic file (type QTm)
+ <use  "figs/att.png" >
+File: figs/cov.png Graphic file (type QTm)
+ <use  "figs/cov.png" >
+Underfull \hbox (badness 1117) in paragraph at lines 211--216
+[][]\OT1/ptm/m/n/10 The two prob-lems are caused by mem-o-ry-less of dy-
+ []
+
+[3]) (./3-opt.tex) (./4-exp.tex
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 31.
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+
+Underfull \hbox (badness 3635) in paragraph at lines 66--88
+\OT1/ptm/m/n/10 pa-ram-e-ter ma-trix $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/
+cmr/m/n/10 962\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/
+n/10 535; 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 535\OML/cmm/m/it/10 ; \OT1/cmr/m/n
+/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 107]$\OT1/ptm/m/n/10 ), mimic-ing
+ []
+
+File: figs/toy_mrr-cp-exp.png Graphic file (type QTm)
+<use  "figs/toy_mrr-cp-exp.png" >
+File: figs/toy_mrr-cp-ray.png Graphic file (type QTm)
+ <use  "figs/toy_mrr-cp-ray.png" >
+File: figs/toy_mrr-rand-exp.png Graphic file (type QTm)
+
+<use  "figs/toy_mrr-rand-exp.png" >
+File: figs/toy_mrr-rand-ray.png Graphic file (type QTm)
+ <use  "figs/toy_mrr-rand-ray.png" >
+File: figs/toy_rmse.png Graphic file (type QTm)
+
+<use  "figs/toy_rmse.png" >
+File: figs/real_mrr.png Graphic file (type QTm)
+ <use  "figs/real_mrr.png" >
+File: figs/real_rmse.png Graphic file (type QTm)
+
+<use  "figs/real_rmse.png" > [4]
+File: figs/case_align-att.png Graphic file (type QTm)
+ <use  "figs/case_align-att.png" >
+File: figs/case_align-cov.png Graphic file (type QTm)
+
+<use  "figs/case_align-cov.png" >
+Underfull \vbox (badness 3907) has occurred while \output is active []
+
+
+Underfull \vbox (badness 7925) has occurred while \output is active []
+
+ [5]
+Overfull \hbox (2.73843pt too wide) in alignment at lines 236--240
+[][][]
+ []
+
+) (./6-conclusion.tex) [6] (./cyanrnn.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 5--9
+[][]\OT1/ptm/m/n/10 Dzmitry Bah-danau, Kyunghyun
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 12--14
+[][]\OT1/ptm/m/n/10 Yoshua Ben-gio, R[]ejean Ducharme,
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 17--22
+[][]\OT1/ptm/m/n/10 Simon Bouri-gault, Syl-vain Lam-
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 31--35
+[][]\OT1/ptm/m/n/10 Junyoung Chung, Caglar Gul-cehre,
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 38--44
+[][]\OT1/ptm/m/n/10 Nan Du, Han-jun Dai, Rak-shit Trivedi,
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 38--44
+\OT1/ptm/m/n/10 Utkarsh Upad-hyay, Manuel Gomez-Rodriguez, and
+ []
+
+
+Underfull \hbox (badness 3068) in paragraph at lines 53--57
+\OT1/ptm/m/n/10 sampling word-embedding method.  \OT1/ptm/m/it/10 arXiv preprin
+t
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 67--71
+[][]\OT1/ptm/m/n/10 Amit Goyal, Francesco Bonchi, and
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 73--76
+[][]\OT1/ptm/m/n/10 Alan G Hawkes.  Spec-tra of some
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 73--76
+\OT1/ptm/m/n/10 self-exciting and mu-tu-ally ex-cit-ing point pro-cesses.
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 79--82
+[][]\OT1/ptm/m/n/10 Mikael Henaff, Arthur Szlam, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+[][]\OT1/ptm/m/n/10 Diederik P Kingma and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--96
+[][]\OT1/ptm/m/n/10 Takeshi Kurashima, To-mo-haru
+ []
+
+
+Underfull \hbox (badness 5592) in paragraph at lines 112--116
+[][]\OT1/ptm/m/n/10 Tomas Mikolov, Mar-tin Karafi[]at,
+ []
+
+
+Underfull \hbox (badness 3713) in paragraph at lines 125--130
+[][]\OT1/ptm/m/n/10 Kazumi Saito, Ry-ohei Nakano, and
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 125--130
+\OT1/ptm/m/n/10 Masahiro Kimura.  Pre-dic-tion of in-for-ma-tion dif-fu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--136
+[][]\OT1/ptm/m/n/10 Martin Sun-der-meyer, Ralf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--160
+[][]\OT1/ptm/m/n/10 Yongqing Wang, Huawei Shen,
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 155--160
+\OT1/ptm/m/n/10 la-tent in-flu-ence and sus-cep-ti-bil-ity from in-for-ma-tion
+ []
+
+) [7] (./cyanrnn.aux) ) 
+Here is how much of TeX's memory you used:
+ 2394 strings out of 493938
+ 31164 string characters out of 6145737
+ 90381 words of memory out of 5000000
+ 5610 multiletter control sequences out of 15000+600000
+ 19795 words of font info for 62 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 27i,11n,26p,554b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on cyanrnn.pdf (7 pages).
