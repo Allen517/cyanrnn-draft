@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  16 FEB 2017 23:12
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  18 FEB 2017 01:16
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -249,18 +249,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 File: figs/mot.eps Graphic file (type eps)
  <figs/mot.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
-) (./2-model.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
  [1
 
 
 
-]
+]) (./2-model.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+
 Underfull \hbox (badness 1888) in paragraph at lines 40--47
 [][]\OT1/ptm/m/n/10 However, RNN suf-fers cross-ing de-pen-dency prob-lem
  []
@@ -272,15 +269,15 @@ Underfull \hbox (badness 1253) in paragraph at lines 91--91
  []
 
 [2]
-File: figs/att.png Graphic file (type QTm)
- <use  "figs/att.png" >
-File: figs/cov.png Graphic file (type QTm)
- <use  "figs/cov.png" >
+File: figs/att.eps Graphic file (type eps)
+ <figs/att.eps>
+File: figs/cov.eps Graphic file (type eps)
+ <figs/cov.eps>
 Underfull \hbox (badness 1117) in paragraph at lines 211--216
 [][]\OT1/ptm/m/n/10 The two prob-lems are caused by mem-o-ry-less of dy-
  []
 
-[3]) (./3-opt.tex) (./4-exp.tex
+) (./3-opt.tex [3]) (./4-exp.tex
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 31.
 
 (/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -334,104 +331,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
  []
 
 
-Underfull \hbox (badness 3271) in paragraph at lines 12--14
-[][]\OT1/ptm/m/n/10 Yoshua Ben-gio, R[]ejean Ducharme,
- []
-
-
-Underfull \hbox (badness 1210) in paragraph at lines 17--22
-[][]\OT1/ptm/m/n/10 Simon Bouri-gault, Syl-vain Lam-
- []
-
-
-Underfull \hbox (badness 4132) in paragraph at lines 31--35
+Underfull \hbox (badness 4132) in paragraph at lines 18--22
 [][]\OT1/ptm/m/n/10 Junyoung Chung, Caglar Gul-cehre,
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 38--44
+Underfull \hbox (badness 1533) in paragraph at lines 25--31
 [][]\OT1/ptm/m/n/10 Nan Du, Han-jun Dai, Rak-shit Trivedi,
  []
 
 
-Underfull \hbox (badness 5924) in paragraph at lines 38--44
+Underfull \hbox (badness 5924) in paragraph at lines 25--31
 \OT1/ptm/m/n/10 Utkarsh Upad-hyay, Manuel Gomez-Rodriguez, and
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 53--57
+Underfull \hbox (badness 3068) in paragraph at lines 40--44
 \OT1/ptm/m/n/10 sampling word-embedding method.  \OT1/ptm/m/it/10 arXiv preprin
 t
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 67--71
+Underfull \hbox (badness 1496) in paragraph at lines 54--58
 [][]\OT1/ptm/m/n/10 Amit Goyal, Francesco Bonchi, and
  []
 
 
-Underfull \hbox (badness 5519) in paragraph at lines 73--76
+Underfull \hbox (badness 5519) in paragraph at lines 60--63
 [][]\OT1/ptm/m/n/10 Alan G Hawkes.  Spec-tra of some
  []
 
 
-Underfull \hbox (badness 4378) in paragraph at lines 73--76
+Underfull \hbox (badness 4378) in paragraph at lines 60--63
 \OT1/ptm/m/n/10 self-exciting and mu-tu-ally ex-cit-ing point pro-cesses.
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 79--82
+Underfull \hbox (badness 2717) in paragraph at lines 66--69
 [][]\OT1/ptm/m/n/10 Mikael Henaff, Arthur Szlam, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 78--81
 [][]\OT1/ptm/m/n/10 Diederik P Kingma and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--96
-[][]\OT1/ptm/m/n/10 Takeshi Kurashima, To-mo-haru
- []
-
-
-Underfull \hbox (badness 5592) in paragraph at lines 112--116
+Underfull \hbox (badness 5592) in paragraph at lines 97--101
 [][]\OT1/ptm/m/n/10 Tomas Mikolov, Mar-tin Karafi[]at,
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 125--130
-[][]\OT1/ptm/m/n/10 Kazumi Saito, Ry-ohei Nakano, and
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 125--130
-\OT1/ptm/m/n/10 Masahiro Kimura.  Pre-dic-tion of in-for-ma-tion dif-fu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--136
+Underfull \hbox (badness 10000) in paragraph at lines 110--113
 [][]\OT1/ptm/m/n/10 Martin Sun-der-meyer, Ralf
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
-[][]\OT1/ptm/m/n/10 Yongqing Wang, Huawei Shen,
- []
-
-
-Underfull \hbox (badness 4366) in paragraph at lines 155--160
-\OT1/ptm/m/n/10 la-tent in-flu-ence and sus-cep-ti-bil-ity from in-for-ma-tion
  []
 
 ) [7] (./cyanrnn.aux) ) 
 Here is how much of TeX's memory you used:
- 2394 strings out of 493938
- 31164 string characters out of 6145737
- 91381 words of memory out of 5000000
- 5610 multiletter control sequences out of 15000+600000
+ 2391 strings out of 493938
+ 31091 string characters out of 6145737
+ 93268 words of memory out of 5000000
+ 5607 multiletter control sequences out of 15000+600000
  19795 words of font info for 62 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 27i,11n,26p,554b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,11n,26p,554b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cyanrnn.pdf (7 pages).

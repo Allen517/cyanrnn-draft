@@ -1,23 +1,19 @@
 \relax 
-\citation{SaitoPredDiffusionProb08}
+\citation{kempe2003maximizing}
 \citation{goyal2010learning}
 \citation{gomez2013modeling}
-\citation{WangAAAI15}
-\citation{bourigault2016representation}
-\citation{WangAAAI15}
-\citation{KurashimaKDD14}
 \citation{Manavoglu2003userbehaviormodels}
-\citation{bengio2003neural}
 \citation{goldberg2014word2vec}
 \citation{mikolov2010recurrent}
 \citation{sundermeyer2012lstm}
 \citation{DuKDD2016}
 \citation{bahdanau2014neural}
-\citation{DuKDD2016}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\newlabel{fig:mot}{{1}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Tree structure of propagation and crossing dependency problems in sequence modeling. For modeling dependence between 1st and 3rd event, we must use redundant information passing from 2nd event, called ``redundant modeling''. If we abandon useful information inherited by 3rd event when modeling the 4th event, the generation of 5th event would lose useful information from 3rd event, called ``cut-off modeling''. }}{1}}
+\citation{DuKDD2016}
 \citation{bahdanau2014neural}
-\newlabel{fig:mot}{{1}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Tree structure of propagation and crossing dependency problems in sequence modeling. For modeling dependence between 1st and 3rd event, we must use redundant information passing from 2nd event, called ``redundant modeling''. If we abandon useful information inherited by 3rd event when modeling the 4th event, the generation of 5th event would lose useful information from 3rd event, called ``cut-off modeling''. }}{2}}
+\citation{DuKDD2016}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Model}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Background}{2}}
 \newlabel{eq:likelihood}{{1}{2}}
@@ -25,15 +21,15 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The architecture of CYAN-RNN. The figure presents the case when predicting the $(k+1)$-th propagation. The sequence in bottom is the observed cascade and the sequence in top is the cascade shifted one step according to the observation. The blue rectangles refer to representations from the hidden units in source sequence, attention layer, and hidden units in target sequence. The yellow rectangle is a component functioned in neural network.}}{2}}
 \newlabel{fig:cyrnn_frame}{{2}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}CYAN-RNN}{2}}
-\citation{DuKDD2016}
+\newlabel{eq:cond_prob}{{3}{2}}
 \citation{tu2016modeling}
 \citation{tu2016modeling}
-\newlabel{eq:cond_prob}{{3}{3}}
 \newlabel{eq:target_embedding}{{4}{3}}
 \newlabel{eq:alpha}{{5}{3}}
 \newlabel{eq:score}{{6}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}CYAN-RNN with Coverage}{3}}
 \newlabel{sec:coverage}{{2.3}{3}}
+\newlabel{eq:cov}{{8}{3}}
 \newlabel{fig:att}{{3(a)}{3}}
 \newlabel{sub@fig:att}{{(a)}{3}}
 \newlabel{fig:cov}{{3(b)}{3}}
@@ -41,8 +37,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Two kinds of implementation on attention. (a) Attention mechanism applied in CYAN-RNN; (b) Attention mechanism with coverage applied in CYAN-RNN (cov). Note that $\textbf  {h}_k=(h_1,\ldots  ,h_k)$ is matrix assembled by all historic event embeddings at step $k$ and $\textbf  {v}_k=(v_1,\ldots  ,v_k)$ is a coverage martix containing all $k$-th coverage vectors.}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{3}}
-\newlabel{eq:cov}{{8}{3}}
 \newlabel{eq:att_cov}{{9}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Window Size}{3}}
 \citation{chung2014empirical}
 \citation{chauvin1995backpropagation}
 \citation{kingma2015method}
@@ -55,7 +51,6 @@
 \citation{LeskovecICML07}
 \citation{Erdos60}
 \citation{voorhees1999trec}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Window Size}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Optimization}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{4}}
 \newlabel{sec:exp}{{4}{4}}
@@ -77,12 +72,12 @@
 \newlabel{fig:pred_tm_real_rmse}{{4(g)}{5}}
 \newlabel{sub@fig:pred_tm_real_rmse}{{(g)}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparisons on baselines and our proposed models. (a)$\sim $(e) The predictions of next activated user and time on toy data produced from different networks and propagation models; (f) and (g) The predictions of next activated user and time on real data.}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MRR on CP, Exp}}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {MRR on CP, Rayleign}}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {MRR on Random, Exp}}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {MRR on Random, Rayleign}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {CP, Exp}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {CP, Rayleign}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Random, Exp}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Random, Rayleign}}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {RMSE on toy data}}}{5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {MRR on real data}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Real data}}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {RMSE on real data}}}{5}}
 \newlabel{fig:cyan_deps}{{5(a)}{5}}
 \newlabel{sub@fig:cyan_deps}{{(a)}{5}}
@@ -98,8 +93,6 @@
 \bibstyle{named}
 \bibdata{/home/yqwang/Documents/bibtex/social}
 \bibcite{bahdanau2014neural}{\citeauthoryear {Bahdanau \bgroup \em  et al.\egroup }{2014}}
-\bibcite{bengio2003neural}{\citeauthoryear {Bengio \bgroup \em  et al.\egroup }{2003}}
-\bibcite{bourigault2016representation}{\citeauthoryear {Bourigault \bgroup \em  et al.\egroup }{2016}}
 \bibcite{chauvin1995backpropagation}{\citeauthoryear {Chauvin and Rumelhart}{1995}}
 \bibcite{chung2014empirical}{\citeauthoryear {Chung \bgroup \em  et al.\egroup }{2014}}
 \bibcite{DuKDD2016}{\citeauthoryear {Du \bgroup \em  et al.\egroup }{2016}}
@@ -109,15 +102,13 @@
 \bibcite{goyal2010learning}{\citeauthoryear {Goyal \bgroup \em  et al.\egroup }{2010}}
 \bibcite{hawkes1971spectra}{\citeauthoryear {Hawkes}{1971}}
 \bibcite{henaff2016orthogonal}{\citeauthoryear {Henaff \bgroup \em  et al.\egroup }{2016}}
+\bibcite{kempe2003maximizing}{\citeauthoryear {Kempe \bgroup \em  et al.\egroup }{2003}}
 \bibcite{kingma2015method}{\citeauthoryear {Kingma and Adam}{2015}}
-\bibcite{KurashimaKDD14}{\citeauthoryear {Kurashima \bgroup \em  et al.\egroup }{2014}}
 \bibcite{LeskovecICML07}{\citeauthoryear {Leskovec and Faloutsos}{2007}}
 \bibcite{Manavoglu2003userbehaviormodels}{\citeauthoryear {Manavoglu \bgroup \em  et al.\egroup }{2003}}
 \bibcite{mikolov2010recurrent}{\citeauthoryear {Mikolov \bgroup \em  et al.\egroup }{2010}}
 \bibcite{prechelt1998automatic}{\citeauthoryear {Prechelt}{1998}}
-\bibcite{SaitoPredDiffusionProb08}{\citeauthoryear {Saito \bgroup \em  et al.\egroup }{2008}}
 \bibcite{sundermeyer2012lstm}{\citeauthoryear {Sundermeyer \bgroup \em  et al.\egroup }{2012}}
 \bibcite{tu2016modeling}{\citeauthoryear {Tu \bgroup \em  et al.\egroup }{2016}}
 \bibcite{vere1988introduction}{\citeauthoryear {Vere-Jones}{1988}}
 \bibcite{voorhees1999trec}{\citeauthoryear {Voorhees}{1999}}
-\bibcite{WangAAAI15}{\citeauthoryear {Wang \bgroup \em  et al.\egroup }{2015}}

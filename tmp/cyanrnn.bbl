@@ -7,19 +7,6 @@ Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.
   translate.
 \newblock {\em arXiv preprint arXiv:1409.0473}, 2014.
 
-\bibitem[\protect\citeauthoryear{Bengio \bgroup \em et al.\egroup
-  }{2003}]{bengio2003neural}
-Yoshua Bengio, R{\'e}jean Ducharme, Pascal Vincent, and Christian Jauvin.
-\newblock A neural probabilistic language model, 2003.
-
-\bibitem[\protect\citeauthoryear{Bourigault \bgroup \em et al.\egroup
-  }{2016}]{bourigault2016representation}
-Simon Bourigault, Sylvain Lamprier, and Patrick Gallinari.
-\newblock Representation learning for information diffusion through social
-  networks: an embedded cascade model.
-\newblock In {\em Proceedings of the Ninth ACM International Conference on Web
-  Search and Data Mining}, pages 573--582. ACM, 2016.
-
 \bibitem[\protect\citeauthoryear{Chauvin and
   Rumelhart}{1995}]{chauvin1995backpropagation}
 Yves Chauvin and David~E Rumelhart.
@@ -80,19 +67,17 @@ Mikael Henaff, Arthur Szlam, and Yann LeCun.
 \newblock Orthogonal rnns and long-memory tasks.
 \newblock {\em arXiv preprint arXiv:1602.06662}, 2016.
 
+\bibitem[\protect\citeauthoryear{Kempe \bgroup \em et al.\egroup
+  }{2003}]{kempe2003maximizing}
+David Kempe, Jon Kleinberg, and {\'E}va Tardos.
+\newblock Maximizing the spread of influence through a social network.
+\newblock In {\em Proceedings of the ninth ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 137--146. ACM, 2003.
+
 \bibitem[\protect\citeauthoryear{Kingma and Adam}{2015}]{kingma2015method}
 Diederik~P Kingma and Jimmy~Ba Adam.
 \newblock Adam: A method for stochastic optimization.
 \newblock In {\em International Conference on Learning Representation}, 2015.
-
-\bibitem[\protect\citeauthoryear{Kurashima \bgroup \em et al.\egroup
-  }{2014}]{KurashimaKDD14}
-Takeshi Kurashima, Tomoharu Iwata, Noriko Takaya, and Hiroshi Sawada.
-\newblock Probabilistic latent network visualization: Inferring and embedding
-  diffusion networks.
-\newblock In {\em Proceedings of the 20th ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, KDD '14, pages 1236--1245, New York,
-  NY, USA, 2014. ACM.
 
 \bibitem[\protect\citeauthoryear{Leskovec and Faloutsos}{2007}]{LeskovecICML07}
 Jure Leskovec and Christos Faloutsos.
@@ -120,14 +105,6 @@ Lutz Prechelt.
   criteria.
 \newblock {\em Neural Networks}, 11(4):761--767, 1998.
 
-\bibitem[\protect\citeauthoryear{Saito \bgroup \em et al.\egroup
-  }{2008}]{SaitoPredDiffusionProb08}
-Kazumi Saito, Ryohei Nakano, and Masahiro Kimura.
-\newblock Prediction of information diffusion probabilities for independent
-  cascade model.
-\newblock In {\em Knowledge-Based Intelligent Information \& Engineering
-  Systems}, pages 67--75, 2008.
-
 \bibitem[\protect\citeauthoryear{Sundermeyer \bgroup \em et al.\egroup
   }{2012}]{sundermeyer2012lstm}
 Martin Sundermeyer, Ralf Schl{\"u}ter, and Hermann Ney.
@@ -149,13 +126,5 @@ D~Vere-Jones.
 Ellen~M. Voorhees.
 \newblock The trec8 question answering track report.
 \newblock In {\em Text REtrieval Conference}, 1999.
-
-\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
-  }{2015}]{WangAAAI15}
-Yongqing Wang, Huawei Shen, Shenghua Liu, and Xueqi Cheng.
-\newblock Learning user-specific latent influence and susceptibility from
-  information cascades.
-\newblock In {\em Proceedings of the 29th AAAI Conference on Artificial
-  Intelligence}, pages 477--483, 2015.
 
 \end{thebibliography}
