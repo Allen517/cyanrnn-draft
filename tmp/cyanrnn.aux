@@ -2,6 +2,7 @@
 \citation{kempe2003maximizing}
 \citation{goyal2010learning}
 \citation{gomez2013modeling}
+\citation{WangAAAI15}
 \citation{Manavoglu2003userbehaviormodels}
 \citation{goldberg2014word2vec}
 \citation{mikolov2010recurrent}
@@ -10,35 +11,33 @@
 \citation{bahdanau2014neural}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \newlabel{fig:mot}{{1}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Tree structure of propagation and crossing dependency problems in sequence modeling. For modeling dependence between 1st and 3rd event, we must use redundant information passing from 2nd event, called ``redundant modeling''. If we abandon useful information inherited by 3rd event when modeling the 4th event, the generation of 5th event would lose useful information from 3rd event, called ``cut-off modeling''. }}{1}}
-\citation{DuKDD2016}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  An example of crossing dependency problem in sequence modeling. }}{1}}
 \citation{bahdanau2014neural}
-\citation{DuKDD2016}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Model}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Background}{2}}
 \newlabel{eq:likelihood}{{1}{2}}
-\newlabel{eq:pooling_frame}{{2}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The architecture of CYAN-RNN. The figure presents the case when predicting the $(k+1)$-th propagation. The sequence in bottom is the observed cascade and the sequence in top is the cascade shifted one step according to the observation. The blue rectangles refer to representations from the hidden units in source sequence, attention layer, and hidden units in target sequence. The yellow rectangle is a component functioned in neural network.}}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The architecture of CYAN-RNN. The figure presents the case when modeling the generation of the $(k+1)$-th propagation. The sequence at bottom is the observed propagations and the sequence at top is the predictive propagations. The blue rectangles refer to representations of hidden units. The yellow rectangle is a general form of attention function $s_k=\textit  {AttentionFunc}(t_{k-1}, h_k)$.}}{2}}
 \newlabel{fig:cyrnn_frame}{{2}{2}}
+\newlabel{eq:pooling_frame}{{2}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}CYAN-RNN}{2}}
-\newlabel{eq:cond_prob}{{3}{2}}
+\citation{DuKDD2016}
 \citation{tu2016modeling}
 \citation{tu2016modeling}
+\newlabel{eq:cond_prob}{{3}{3}}
 \newlabel{eq:target_embedding}{{4}{3}}
 \newlabel{eq:alpha}{{5}{3}}
 \newlabel{eq:score}{{6}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}CYAN-RNN with Coverage}{3}}
 \newlabel{sec:coverage}{{2.3}{3}}
-\newlabel{eq:cov}{{8}{3}}
 \newlabel{fig:att}{{3(a)}{3}}
 \newlabel{sub@fig:att}{{(a)}{3}}
 \newlabel{fig:cov}{{3(b)}{3}}
 \newlabel{sub@fig:cov}{{(b)}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Two kinds of implementation on attention. (a) Attention mechanism applied in CYAN-RNN; (b) Attention mechanism with coverage applied in CYAN-RNN (cov). Note that $\textbf  {h}_k=(h_1,\ldots  ,h_k)$ is matrix assembled by all historic event embeddings at step $k$ and $\textbf  {v}_k=(v_1,\ldots  ,v_k)$ is a coverage martix containing all $k$-th coverage vectors.}}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Two kinds of implementation on attention layer. (a) The attention mechanism applied in CYAN-RNN; (b) The attention mechanism with coverage applied in CYAN-RNN (cov). Note that $\textbf  {h}_k=(h_1,\ldots  ,h_k)$ is matrix assembled by all historical propagation embeddings at step $k$, and $\textbf  {V}_k=(V_1,\ldots  ,V_k)$ is a coverage martix containing all coverage vectors at step $k$.}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{3}}
+\newlabel{eq:cov}{{8}{3}}
 \newlabel{eq:att_cov}{{9}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Window Size}{3}}
 \citation{chung2014empirical}
 \citation{chauvin1995backpropagation}
 \citation{kingma2015method}
@@ -51,6 +50,7 @@
 \citation{LeskovecICML07}
 \citation{Erdos60}
 \citation{voorhees1999trec}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Window Size}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Optimization}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{4}}
 \newlabel{sec:exp}{{4}{4}}
@@ -83,7 +83,7 @@
 \newlabel{sub@fig:cyan_deps}{{(a)}{5}}
 \newlabel{fig:cyan_cov_deps}{{5(b)}{5}}
 \newlabel{sub@fig:cyan_cov_deps}{{(b)}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Sample alignments on a fragement of cascade. The y-axis is the users who will be activated next sequentiallly from top to bottom. The x-axis is the activated order related to next activated user in the cascade. Each pixel shows the weight $\alpha _{k,i}$ related to $i$-th event embedding at each step $k$, in grayscale (0:black, 1:white). (a) the alignments inferred by CYAN-RNN; (b) the alignments inferred by CYAN-RNN(cov). }}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Sample alignments on a fragement of cascade. The y-axis is the users who will be activated next sequentiallly from top to bottom. The x-axis is the activated order related to next activated user in the cascade. Each pixel shows the weight $\alpha _{k,i}$ related to $i$-th propagation embedding at each step $k$, in grayscale (0:black, 1:white). (a) the alignments inferred by CYAN-RNN; (b) the alignments inferred by CYAN-RNN(cov). }}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{5}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces AUC values of network inference.}}{6}}
@@ -112,3 +112,4 @@
 \bibcite{tu2016modeling}{\citeauthoryear {Tu \bgroup \em  et al.\egroup }{2016}}
 \bibcite{vere1988introduction}{\citeauthoryear {Vere-Jones}{1988}}
 \bibcite{voorhees1999trec}{\citeauthoryear {Voorhees}{1999}}
+\bibcite{WangAAAI15}{\citeauthoryear {Wang \bgroup \em  et al.\egroup }{2015}}

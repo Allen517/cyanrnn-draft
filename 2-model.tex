@@ -2,21 +2,23 @@
 
 \subsection{Background}
 % \noindent{\textbf{CDM based on RNN:}}
-Firstly, we introduce RNN as an eventwise modeling method in cascade dynamics
-modeling. A cascade $S=\{x_i|x_i=(t_i, u_i), u_i\in U \text{~and~}
-t_i\in R^+\}_{i=1}^N$ is a set of propagations asendingly ordered by time,
-where $U$ refers to all possible users in cascades. The $i$-th propagation $x_i$
-is recorded as a tuple $(t_i, u_i)$ referring to activated time and activated user
-respectively. At each step $k$, the $k$-th propagation are fed into hidden
-units by nonlinear transformation $f$, jointly with the outputs from the
-previous hidden units, updating the hidden state $h_k=f(x_i,h_{k-1})$. The
-representation of hidden state $h_k$ can be considered as event embedding to
-the $k$-th propagation~\cite{DuKDD2016}, and the output is trained to predict
-the next propagation $x_{k+1}$ given $h_k$. In other words, we use RNN to
-maximize the likelihood probability of observed propagations,
+Firstly, we introduce RNN 
+% as an eventwise modeling method 
+in cascade dynamics modeling. A cascade $S=\{x_i|x_i=(t_i, u_i), u_i\in U
+\text{~and~} t_i\in R^+\}_{i=1}^N$ is a set of propagations ascendingly ordered
+by time, where $U$ refers to all possible activated users in cascade. The
+$i$-th propagation $x_i$ is recorded as a tuple $(t_i, u_i)$ referring to
+activated time and user respectively. Then, RNN can be used to simulate the
+generation of propagations by $N$ steps sequentially. At each step $k$, the $k$-th
+propagation are fed into hidden units of RNN by nonlinear transformation $f$,
+jointly with the outputs from the last hidden units, updating the hidden state
+$h_k=f(x_i,h_{k-1})$. The representation of hidden state $h_k$ can be considered
+as embedding of the $k$-th propagation, and the output is
+trained to predict the next propagation $x_{k+1}$ given $h_k$. In other words,
+we use RNN to maximize the likelihood probability of cascade,
 \begin{equation}
 \label{eq:likelihood}
-p(\textbf{x})=\prod_{k=1}^N p(x_{k+1}|h_k)
+p(S)=\prod_{k=1}^N p(x_{k+1}|h_k).
 \end{equation}
 % The embeddings of propagations $E(x_i)$ are given as inputs
 % to RNN. At each step $k$, the network updates its hidden state $h_k=f(E(x_i),
@@ -33,25 +35,26 @@ p(\textbf{x})=\prod_{k=1}^N p(x_{k+1}|h_k)
 % to the corresponding inputs. 
 Based on sufficient observed cascades, RNN
 can find an optimal solution for Eq.~(\ref{eq:likelihood})
-in a huge functional space, avoiding the limits of prior knowledge. Thus, RNN
-can be a promising method to capture the complex propagation patterns in cascade
+in a huge functional space, avoiding the limits of prior knowledge on
+diffusion model.
+Thus, RNN can be a promising method to capture the complex propagation patterns in cascade
 dynamics modeling. 
 
 However, RNN suffers crossing dependency problem caused by tree structure
 propagations in cascade, shown in Fig.~\ref{fig:mot}. One of the possible
-solutions is to construct a pooling layer above the hidden
-units in order to build the direct dependency between the generation of $k$-th
-propagation and all previous event embeddings, i.e.,
-$p(x_{k+1} | \text{pooling}(h_1,\ldots,h_k))$. The simplest way of pooling can
+solutions is to construct a dynamic pooling layer above the hidden
+units at each $k$ step in order to build the direct dependence between the
+next propagation and all previous propagation embeddings,
+i.e., $p(x_{k+1} | \text{pooling}(h_1,\ldots,h_k))$. The simplest way of pooling can
 be formalized as
 \begin{equation}
 \label{eq:pooling_frame}
 s_k=\sum_{i=1}^k \alpha_{k,i} h_i \text{,~~~~~s.t.~} \sum_{i=1}^k
 \alpha_{k,i}=1,
 \end{equation}
-where the weight $\alpha_{k,i}$ refers to the proportion of dependency between
-next propagation and the $i$-th event embedding. Mean pooling and max pooling
-are two popular choices for setting weights which takes the mean or element-wise
+where the weight $\alpha_{k,i}$ refers to the proportion of dependence between
+next propagation and the $i$-th propagation embedding. Mean pooling and max
+pooling are two popular choices for setting weights which takes the mean or element-wise
 max of all hidden states. However, these two methods still ignore the structure
 information in cascades.
 % Mean pooling and max pooling
@@ -60,7 +63,7 @@ information in cascades.
 % In this way, the generation of next activation
 % can depend on any historical embedding instead of transitive dependency.
 Intuitively, the weights can be settled according to the cascade tree, yet we
-can hardly observe the tree structure even given the social relationships. Next
+can hardly obtain the tree structure, even given the social relationships. Next
 we propose attention mechanism to implement the pooling layer. 
 
 \subsection{CYAN-RNN}
@@ -73,32 +76,39 @@ between source words and target words~\cite{}.
 % aligned to the words in target sequence. 
 % Attention-based RNN can adaptively
 % learn the alignment between source and target sequences. 
-However, there are two
+However, there remains two
 problems when applying attention mechanism in cascade dyanmics modeling: 1)
-only one single sequence can be observed in a cascade; 2) the size of alignments
-in attention mechanism need to be updated when the context $\{h_1,\ldots,h_k\}$
-is growing along with the proceeding propagations.
+Only one single sequence can be observed in a cascade; 2) The size of
+alignments in attention mechanism needs to be updated when the context
+$\{h_1,\ldots,h_k\}$ is growing along with the proceeding propagations.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/cyanrnn_framework.png}
 \caption{The architecture of CYAN-RNN. The figure presents the case when
-predicting the $(k+1)$-th propagation. The sequence in bottom is the observed
-cascade and the sequence in top is the cascade shifted one step
-according to the observation. The blue rectangles refer to representations from
-the hidden units in source sequence, attention layer, and hidden units in
-target sequence. The yellow rectangle is a component functioned in neural
-network.}
+modeling the generation of the $(k+1)$-th propagation. The sequence at bottom is
+the observed propagations and the sequence at top is the predictive
+propagations. The blue rectangles refer to representations of hidden units.
+% in source sequence, attention layer, and hidden units in target sequence. 
+The yellow rectangle is a general form of attention function
+$s_k=\textit{AttentionFunc}(t_{k-1}, h_k)$.}
 \label{fig:cyrnn_frame}
 \end{figure}
 
 Thus, we propose CYAN-RNN for cascade dynamics modeling, applying a dynamic
 attention mechanism to solve the crossing dependency problem. The architecture
 of CYAN-RNN is shown in Fig.~\ref{fig:cyrnn_frame}. In CYAN-RNN, we conduct the
-observed cascade as the source sequence. The target sequence is the copy of
-source sequence, shifting one step of the copy backwards. The objective is to
-jointly predict the next propagation and learn the alignment of dependency
-between the next propagation and histories. 
+observed cascade as the source sequence. The each propagation in target sequence
+is the following propagation corresponding to the propagation in source
+sequence. 
+% The target sequence is the set of following propagations corresponding to the
+% propagations in source sequence.
+% copy of source sequence, 
+% is the copy of source sequence and shift one
+% , shifting one step of the copy backwards. 
+The objective is to
+jointly predict the next propagation and learn the alignment of dependence
+between the next propagation and historical propagation embeddings. 
 % As to the target
 % sequence, we copy the source sequence and then shift one step of the copy backwards. 
 According to the architecture, we define each conditional probability in
@@ -107,9 +117,9 @@ Eq.~(\ref{eq:likelihood}) as:
 \label{eq:cond_prob}
 p(x_{k+1}|x_1,\ldots,x_k)=g(x_k, t_{k}, s_{k}),
 \end{equation}
-where $g$ is an objective function defined the joint probability of
-propagation on activated user and activated time. Here we use the objective function
-defined on RMTPP~\cite{DuKDD2016}.
+where $g$ is an objective function defined the joint probability
+on both activated time and user. Here we use the objective function
+formalized in RMTPP~\cite{DuKDD2016}.
 % \begin{equation}
 % \label{eq:rmtpp}
 % \begin{aligned}
@@ -128,7 +138,7 @@ where
 % subscript in exponential function is the index of vector.   
 $f$ is
 a nonlinear activation function, which can be either a \textit{tanh} or
-\textit{sigmoid} function. The context vector $s_k$ is calculated by
+a \textit{sigmoid} function. The context vector $s_k$ is calculated by
 Eq.~(\ref{eq:pooling_frame}) where the weights $\alpha_{k,.}$ 
 % in proposed attention mechanism 
 is updated by the growth context
@@ -142,7 +152,7 @@ where
 \label{eq:score}
 e_{k,i}=a(t_{k-1}, h_i)=v^T\tanh(W t_{k-1}+U h_i)
 \end{equation}
-scores how well the dependency between the $i$-th event
+scores how well the dependence between the $i$-th propagation
 embedding and the output at the $k$-th step. The implementation of attention
 mechanism in proposed model is briefly represented in Fig.~\ref{fig:att}. 
 
@@ -161,8 +171,8 @@ logarithmic likelihood.
 % parameter set in the model. 
 With the attention mechanism, the alignment
 weigts $\alpha_{k,.}$ can be directly updated through the cost function, thus
-exploit an expected representation $s_k$ over all historic event embeddings for
-each step $k$.
+exploit an expected representation $s_k$ over all historical propagation
+embeddings for each step $k$.
 
 % The weights in proposed attention
 % mechanism $s_k=\sum_{i=1}^k \alpha_i h_i$   
@@ -186,11 +196,12 @@ each step $k$.
 \label{fig:cov}
 \includegraphics[width=0.35\textwidth]{figs/cov.eps}
 }
-\caption{Two kinds of implementation on attention. (a) Attention mechanism
-applied in CYAN-RNN; (b) Attention mechanism with coverage applied in CYAN-RNN
-(cov). Note that $\textbf{h}_k=(h_1,\ldots,h_k)$ is matrix assembled by all
-historic event embeddings at step $k$ and $\textbf{v}_k=(v_1,\ldots,v_k)$ is
-a coverage martix containing all $k$-th coverage vectors.}
+\caption{Two kinds of implementation on attention layer. (a) The attention
+mechanism applied in CYAN-RNN; (b) The attention mechanism with coverage applied
+in CYAN-RNN (cov). Note that $\textbf{h}_k=(h_1,\ldots,h_k)$ is matrix assembled by all
+historical propagation embeddings at step $k$, and
+$\textbf{V}_k=(V_1,\ldots,V_k)$ is a coverage martix containing all coverage
+vectors at step $k$.}
 \end{figure}
 
 \subsection{CYAN-RNN with Coverage}
@@ -198,7 +209,7 @@ a coverage martix containing all $k$-th coverage vectors.}
 
 Although CYAN-RNN is proposed to better model cascade dynamics in consideration
 of crossing dependency problem, the proposed model still suffer
-\emph{over-dependent} and \emph{under-dependent} problems when applying
+\emph{over-dependent} and \emph{under-dependent} problems in
 attention mechanism.
 As the exmaple shown in Fig.~\ref{fig:mot}, if the user $u_1$ is an influential
 user and his propagation is key to the cascade, the propagation activated by
@@ -219,17 +230,20 @@ V_{k,i}=f\left(V_{k-1, i}, \alpha_{k-1,i}, t_{k-1}, h_i\right).
 \end{equation}
 Remarkably, as the increasing propagations and alignments, $V_{k,k}$ and
 $\alpha_{k,k}$ have no corresponding values in $V_{k-1,.}$ and
-$\alpha_{k-1,.}$. Thus, we fill up with zeros in our works. 
-Compared with $V_{k,i}$, $V_{k-1,i}$ 
+$\alpha_{k-1,.}$. Instead we fill up with zero in our work. 
+% Compared with $V_{k,i}$, $V_{k-1,i}$ 
 At each step $k$, the $k$-th coverage serves an additional input to the
 attention mechanism, providing complementary information of that how about the
-dependencies of historical event embeddings are in the past. The rewritten
+dependencies of propagation embeddings are in the past. The rewritten
 alignment calculation in Eq.~(\ref{eq:score}) by coverage can be
-formalized~\footnote{The formalization is determined by the incremental length
-of alignment weights. If we use the last coverage $V_{k-1,.}$ instead of
-$V_{k,.}$ (like~\cite{tu2016modeling}) to update $e_{k,.}$ at each $k$
-step, we will lose certain coverage information and cause unbalance
-calculation about $k$-th event embedding, proved by our preliminary experiments.} as
+formalized~\footnote{
+% The formalization is determined by the incremental length
+% of alignment weights. 
+If we use the last coverage $V_{k-1,.}$ instead of
+$V_{k,.}$ (like~\cite{tu2016modeling}) to update $e_{k,.}$ at each step $k$, 
+we will lose certain coverage information and cause unbalanced
+calculation on $k$-th propagation embedding, proved by our preliminary
+experiments.} as
 \begin{equation}
 \label{eq:att_cov}
 \begin{aligned}
@@ -237,16 +251,16 @@ e_{k,i} &= a(t_{k-1}, h_i, V_{k,i}) \\
 & = v^T\tanh(W t_{k-1}+U h_i+Z V_{k,i}).
 \end{aligned}
 \end{equation}
-We expect that the alignment weights would be focus more on recent event
+We expect that the alignment weights would be focus more on recent propagation
 embeddings. The expectation will be validated in section~\ref{sec:exp}.   
 
 \subsection{Window Size}
 Practically, a cascade may last long and the propagation length would be huge,
 causing an extreme computation cost when applying dynamic attention mechanism
-proposed in CYAN-RNN. According to perference of users interests on recent
+proposed in CYAN-RNN. According to perference of users' interests on recent
 propagations, we consider a hyper-parameter, symboled by \emph{window size}
-$l$, limiting the size of alignments so that the predicted task would only depend on
-last $l$ propagations. Empirically, we set $l=200$ in most cases.
+$l$, limiting the size of alignments so that the predictive task would only
+depend on last $l$ propagations. Empirically, we set $l=200$ at most cases.
 
 % Thus, the attention mechanism only need to calculate the
 % $\max (k, t)$ historical event embeddings 

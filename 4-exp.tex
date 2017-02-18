@@ -152,8 +152,8 @@ Fig.~\ref{fig:pred_usr_toy_cp_ray},
 \ref{fig:pred_usr_toy_rand_exp} and \ref{fig:pred_usr_toy_rand_ray}, however,
 CYAN-RNN and CYAN-RNN(cov) can still performs better. It clearly demonstrates
 that the proposed attention mechanism has the ability to directly capture past
-event information which may be ``forgetten'' by sequential transitions in RNN,
-called crossing dependency problems in CDM.
+propagation information which may be ``forgetten'' by sequential transitions in
+RNN, called crossing dependency problems in CDM.
 % Interestingly, we can find out that the RMTPP has lower accurary or MRR
 % values in datasets of (CP, Rayleign), (Random, Exp) and (Random, Rayleign).
 Fig.~\ref{fig:pred_tm_toy_rmse} compares the predictive performance on RMSE.
@@ -164,8 +164,8 @@ CYAN-RNN(cov) can perform slightly better than RMTPP and CYAN-RNN in all
 datasets when predicting next activated time. 
 Additionally, we can observe that CYAN-RNN(cov) consistently perform better or
 even than CYAN-RNN in two prediction tasks. It indicates that the coverage can
-help to efficiently utilize the event embeddings in attention mechanism. Next
-we will exploit the answers how the coverage can help to boost predictive
+help to efficiently utilize the propagation embeddings in attention mechanism.
+Next we will exploit the answers how the coverage can help to boost predictive
 performance and lead to better inference on dependency structure.
 
 \begin{figure}
@@ -181,8 +181,8 @@ performance and lead to better inference on dependency structure.
 \caption{Sample alignments on a fragement of cascade. The y-axis is the users
 who will be activated next sequentiallly from top to bottom. The x-axis is the
 activated order related to next activated user in the cascade. Each pixel shows
-the weight $\alpha_{k,i}$ related to $i$-th event embedding at each step $k$, in
-grayscale (0:black, 1:white). (a) the alignments inferred by CYAN-RNN; (b) the
+the weight $\alpha_{k,i}$ related to $i$-th propagation embedding at each step
+$k$, in grayscale (0:black, 1:white). (a) the alignments inferred by CYAN-RNN; (b) the
 alignments inferred by CYAN-RNN(cov).
 % the inferred Graphs of
 % propagations inferred by proposed models.
@@ -196,13 +196,14 @@ alignments inferred by CYAN-RNN(cov).
 Firstly, we expect to check if coverage can reduce the over-dependent and
 under-dependent problem mentioned in section~\ref{sec:coverage}.
 Fig.~\ref{fig:cyan_deps} and \ref{fig:cyan_cov_deps} show an example. Every grid
-in each plot represents the alignment weights associated with event embeddings.
+in each plot represents the alignment weights associated with propagation
+embeddings.
 The brighter grid refers to the larger weights corresponding to next
 propagation. From this we see which positions in the past propagations
 were considered more important when predicting next propagation. Comparing to
 the alignments in CYAN-RNN, we can observe that the alignments in CYAN-RNN(cov)
-concentrate more on unused event embeddings, which is consistent to well-studied
-phenomonen in published works~\cite{}. Moreover, we wonder if the
+concentrate more on unused propagation embeddings, which is consistent to
+well-studied phenomonen in published works~\cite{}. Moreover, we wonder if the
 inferred alignments is homologous to true propagation structures. Thus, we
 calculate alignments on each step of cascades in test data. We suggest that the
 propagation structure of next propagation can be inferred by the largest

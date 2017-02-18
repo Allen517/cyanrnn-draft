@@ -127,4 +127,12 @@ Ellen~M. Voorhees.
 \newblock The trec8 question answering track report.
 \newblock In {\em Text REtrieval Conference}, 1999.
 
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2015}]{WangAAAI15}
+Yongqing Wang, Huawei Shen, Shenghua Liu, and Xueqi Cheng.
+\newblock Learning user-specific latent influence and susceptibility from
+  information cascades.
+\newblock In {\em Proceedings of the 29th AAAI Conference on Artificial
+  Intelligence}, pages 477--483, 2015.
+
 \end{thebibliography}

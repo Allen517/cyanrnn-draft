@@ -12,15 +12,21 @@ In order to model the cascades, many information diffusion models have been
 proposed in the literature, such as discrete-time independent cascade model,
 discrete-time linear threshold model and continuous-time independent cascade
 model. A diffusion model is often associated with a directed graph and 
-parameterized by interpersonal influence defined on edges or
-interactions between users. Kempe et al.~\cite{kempe2003maximizing} implemented
+parameterized by propagation probabilities defined on edges or interpersonal
+influence defined on nodes.
+% interpersonal influence defined on edges or
+% interactions between users. 
+Kempe et al.~\cite{kempe2003maximizing} implemented
 the linear threshold model by a degree-modulated edge weight. Goyal et
 al.~\cite{goyal2010learning} provided two static models in terms of Bernoulli
 distribution and Jaccard index, and learned temporal factors to maximize
 likelihood of cascades. Gomez-Rodriguez et al.~\cite{gomez2013modeling}
 estimated a transimission function over time associated with each edge, assuming
 that observed diffusion time is independently sampled according to the
-transimission function. 
+transimission function. Wang et.al~\cite{WangAAAI15}
+captured users' influence and susceptibility in latent space and model the
+transition probabilities of users' activated status according to users' latent
+characteristics.
 
 % survival model 
 % and a
@@ -67,12 +73,14 @@ transimission function.
 \label{fig:mot}
 \centering
 \includegraphics[width=0.45\textwidth]{figs/mot.eps}
-\caption{Tree structure of propagation and crossing dependency problems in
-sequence modeling. For modeling dependence between 1st and 3rd event, we must
-use redundant information passing from 2nd event, called
-``redundant modeling''. If we abandon useful information inherited by 3rd
-event when modeling the 4th event, the generation of 5th event would lose
-useful information from 3rd event, called ``cut-off modeling''.
+\caption{
+An example of crossing dependency problem in sequence modeling. 
+% Tree structure of propagation and crossing dependency problems in
+% sequence modeling. For modeling dependence between 1st and 3rd event, we must
+% use redundant information passing from 2nd event, called
+% ``redundant modeling''. If we abandon useful information inherited by 3rd
+% event when modeling the 4th event, the generation of 5th event would lose
+% useful information from 3rd event, called ``cut-off modeling''.
 }
 \end{figure}
 
@@ -103,7 +111,7 @@ Network
 (RNN)~\cite{goldberg2014word2vec,mikolov2010recurrent,sundermeyer2012lstm}.
 Du et al.~\cite{DuKDD2016} proposed a RNN framework, called RMTPP,
 where the embedding of hidden units are used to parameterize the generation
-process of propagations. The benefits of sequence modeling are two folds: 1)
+process of propagations. The benefits of sequence modeling are two-fold: 1)
 It avoids strong prior knowledge on diffusion model; 2) It has no limitation on
 hidden social network structure. 
 
@@ -133,39 +141,59 @@ may meet ``crossing dependency'' problem in cascade dynamics modeling, mainly
 caused by
 %  The crossing dependencies problem is mainly caused by 
 tree structure of propagation. Fig.~\ref{fig:mot} shows the crossing
-dependency dilemma in practical. For modeling the dependence between the 1st
-and 3rd propagation, we must use redundant information passing from the 2nd
-one.
-% , called ``redundant modeling''. 
-Otherwise, if we abandon useful information inherited from the 2nd propagatoin,
-the generation of the 4th propagation will lose useful information as the
-corresponding user $u_4$ is directly connected to $u_2$ on the cascade tree.
+dependency dilemma in practical. 
+As consideration
+of tree strucutre of propagations, we need to construct the dependence between
+the 1st and the 3rd propagations, causing redundant information usage passing
+from the 2nd one (the transitive dependence marked as grey in time
+line). If we abandon information inherited from the 2nd propagation, the
+generation of 4th propagation will lose useful information from the 2nd
+one as the corresponding user $u_4$ is directly connected to $u_2$ on the
+cascade tree
+(the transitive dependence marked as red in time line). 
+% For modeling the dependence between the 1st
+% and 3rd propagation, we must use redundant information passing from the 2nd
+% one.
+% % , called ``redundant modeling''. 
+% Otherwise, if we abandon useful information inherited from the 2nd propagatoin,
+% the generation of the 4th propagation will lose some useful information as the
+% corresponding user $u_4$ is directly connected to $u_2$ on the cascade tree.
 % event when modeling the 4th event, the generation of 5th event would lose
 % useful information from 3rd event, called ``cut-off modeling''. Crossing
 % dependency problems limit the efficiency of sequence modeling.
 In this paper, we propose a \textbf{C}ascade d\textbf{Y}namics
 modeling with \textbf{A}ttentio\textbf{N}-based RNN (CYAN-RNN) to better
-apply RNN in cascade dynamics modeling. We construct a pooling
+apply RNN in cascade dynamics modeling. We construct a dynamic pooling
 layer above hidden units of RNN, aggregating all embeddings of hidden units
-until current steps. The generation of following propagation is relied on the
+until current step. The generation of following propagation is relied on the
 aggregated embedding. 
 % The weights in pooling layer pointing to each historical event
 % embedding refers to connections between current event and history. 
 We choose attention mechanism~\cite{bahdanau2014neural} to realize the pooling layer,
 where the parameters can be automatically learned by maximizing the
 likelihood of cascade. 
-The benifits of our proposed model are three-fold: 
-1) We exploit crossing dependency problem existed in traditional sequence
-modeling when applied to model cascade dynamics and proposed attention-based 
-RNN to solve the problem;
+% The benifits of our proposed model are three-fold: 
+More specifically, our work makes the following contributions:
+\begin{itemize}
+  \item We exploit crossing dependency problem existed in traditional sequence
+  modeling when applied to model cascade dynamics and proposed attention-based
+  RNN to solve the problem;
+  \item We propose attention mechansim with coverage to further improve the
+  performance of attention mechanism;
+  \item The alignments in proposed attention mechanism are homologous to the
+  underlying structure of propagation.
+\end{itemize}
+% 1) We exploit crossing dependency problem existed in traditional sequence
+% modeling when applied to model cascade dynamics and proposed attention-based 
+% RNN to solve the problem;
 % We propose two sequence modeling methods based on RNN for cascade dyanmics
 % modeling;
 % eventwise method, using sequence
 % modeling, for cascade dynamics modeling; 
-2) We propose attention mechansim with coverage to further improve the
-performance of attention mechanism;
-3) The alignments in proposed attention mechanism are homologous to the
-underlying structure of propagation.   
+% 2) We propose attention mechansim with coverage to further improve the
+% performance of attention mechanism;
+% 3) The alignments in proposed attention mechanism are homologous to the
+% underlying structure of propagation.   
 % 
 % We exploit crossing dependency problem existed in traditional sequence
 % modeling when applied to cascade dynamics modeling. The alignments in

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  18 FEB 2017 01:16
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  18 FEB 2017 19:13
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -249,22 +249,32 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 File: figs/mot.eps Graphic file (type eps)
  <figs/mot.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 146.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 164.
  [1
 
 
 
-]) (./2-model.tex
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 178.
+
+
+(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+)
+(./2-model.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 
-Underfull \hbox (badness 1888) in paragraph at lines 40--47
+Underfull \hbox (badness 1888) in paragraph at lines 43--50
 [][]\OT1/ptm/m/n/10 However, RNN suf-fers cross-ing de-pen-dency prob-lem
  []
 
 File: figs/cyanrnn_framework.png Graphic file (type QTm)
 <use  "figs/cyanrnn_framework.png" >
-Underfull \hbox (badness 1253) in paragraph at lines 91--91
+Underfull \hbox (badness 1253) in paragraph at lines 94--94
 [][]\OT1/ptm/m/n/10 Figure 2: The ar-chi-tec-ture of CYAN-RNN. The fig-ure
  []
 
@@ -273,19 +283,11 @@ File: figs/att.eps Graphic file (type eps)
  <figs/att.eps>
 File: figs/cov.eps Graphic file (type eps)
  <figs/cov.eps>
-Underfull \hbox (badness 1117) in paragraph at lines 211--216
+Underfull \hbox (badness 1117) in paragraph at lines 222--227
 [][]\OT1/ptm/m/n/10 The two prob-lems are caused by mem-o-ry-less of dy-
  []
 
-) (./3-opt.tex [3]) (./4-exp.tex
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 31.
-
-(/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
-
+[3]) (./3-opt.tex) (./4-exp.tex
 Underfull \hbox (badness 3635) in paragraph at lines 66--88
 \OT1/ptm/m/n/10 pa-ram-e-ter ma-trix $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/
 cmr/m/n/10 962\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/
@@ -310,18 +312,17 @@ File: figs/real_mrr.png Graphic file (type QTm)
 File: figs/real_rmse.png Graphic file (type QTm)
 
 <use  "figs/real_rmse.png" > [4]
-File: figs/case_align-att.png Graphic file (type QTm)
- <use  "figs/case_align-att.png" >
-File: figs/case_align-cov.png Graphic file (type QTm)
-
-<use  "figs/case_align-cov.png" >
 Underfull \vbox (badness 3907) has occurred while \output is active []
 
+File: figs/case_align-att.png Graphic file (type QTm)
 
-Underfull \vbox (badness 7925) has occurred while \output is active []
+<use  "figs/case_align-att.png" >
+File: figs/case_align-cov.png Graphic file (type QTm)
+ <use  "figs/case_align-cov.png" >
+Underfull \vbox (badness 2351) has occurred while \output is active []
 
  [5]
-Overfull \hbox (2.73843pt too wide) in alignment at lines 236--240
+Overfull \hbox (2.73843pt too wide) in alignment at lines 237--241
 [][][]
  []
 
@@ -386,14 +387,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--113
 [][]\OT1/ptm/m/n/10 Martin Sun-der-meyer, Ralf
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
+[][]\OT1/ptm/m/n/10 Yongqing Wang, Huawei Shen,
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 132--137
+\OT1/ptm/m/n/10 la-tent in-flu-ence and sus-cep-ti-bil-ity from in-for-ma-tion
+ []
+
 ) [7] (./cyanrnn.aux) ) 
 Here is how much of TeX's memory you used:
- 2391 strings out of 493938
- 31091 string characters out of 6145737
- 93268 words of memory out of 5000000
- 5607 multiletter control sequences out of 15000+600000
- 19795 words of font info for 62 fonts, out of 8000000 for 9000
+ 2394 strings out of 493938
+ 31131 string characters out of 6145737
+ 90293 words of memory out of 5000000
+ 5610 multiletter control sequences out of 15000+600000
+ 20891 words of font info for 64 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 27i,11n,26p,554b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,11n,26p,545b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cyanrnn.pdf (7 pages).
