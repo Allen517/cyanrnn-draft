@@ -4,45 +4,45 @@ The top-level auxiliary file: cyanrnn.aux
 The style file: named.bst
 Database file #1: /home/yqwang/Documents/bibtex/social.bib
 Warning--can't use both volume and number fields in gomez2013modeling
-You've used 21 entries,
+You've used 22 entries,
             2439 wiz_defined-function locations,
-            672 strings with 8271 characters,
-and the built_in function-call counts, 9027 in all, are:
-= -- 932
-> -- 354
-< -- 12
-+ -- 120
-- -- 118
-* -- 658
-:= -- 1387
-add.period$ -- 66
-call.type$ -- 21
-change.case$ -- 142
-chr.to.int$ -- 21
-cite$ -- 22
-duplicate$ -- 409
-empty$ -- 693
-format.name$ -- 144
-if$ -- 1939
+            680 strings with 8547 characters,
+and the built_in function-call counts, 9613 in all, are:
+= -- 998
+> -- 377
+< -- 13
++ -- 128
+- -- 126
+* -- 702
+:= -- 1472
+add.period$ -- 70
+call.type$ -- 22
+change.case$ -- 150
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 435
+empty$ -- 735
+format.name$ -- 153
+if$ -- 2071
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 108
-num.names$ -- 63
-pop$ -- 155
+missing$ -- 23
+newline$ -- 113
+num.names$ -- 66
+pop$ -- 162
 preamble$ -- 1
-purify$ -- 164
+purify$ -- 173
 quote$ -- 0
-skip$ -- 351
+skip$ -- 374
 stack$ -- 0
-substring$ -- 437
-swap$ -- 140
-text.length$ -- 12
+substring$ -- 474
+swap$ -- 151
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 164
+type$ -- 172
 warning$ -- 1
-while$ -- 73
-width$ -- 24
-write$ -- 273
+while$ -- 78
+width$ -- 25
+write$ -- 289
 (There was 1 warning)

@@ -24,7 +24,7 @@ likelihood of cascades. Gomez-Rodriguez et al.~\cite{gomez2013modeling}
 estimated a transimission function over time associated with each edge, assuming
 that observed diffusion time is independently sampled according to the
 transimission function. Wang et.al~\cite{WangAAAI15}
-captured users' influence and susceptibility in latent space and model the
+captured users' influence and susceptibility in latent space and modeled the
 transition probabilities of users' activated status according to users' latent
 characteristics.
 
@@ -171,17 +171,28 @@ aggregated embedding.
 % embedding refers to connections between current event and history. 
 We choose attention mechanism~\cite{bahdanau2014neural} to realize the pooling layer,
 where the parameters can be automatically learned by maximizing the
-likelihood of cascade. 
+likelihood of cascade. Moreover, we propose coverage in attention mechanism to
+ensure sufficient usage of each historical embedding involved in generation of
+following propagations.
+% CYAN-RNN(cov) to construct coverage
+% on attention mechanism in order to solve over-dependent and under-dependent
+% problem existed in CYAN-RNN. 
+% With consideration of preference 
+% it is a common phenomenon that users may have a
+% higher probability activated by recent propagation than past
 % The benifits of our proposed model are three-fold: 
 More specifically, our work makes the following contributions:
 \begin{itemize}
   \item We exploit crossing dependency problem existed in traditional sequence
   modeling when applied to model cascade dynamics and proposed attention-based
   RNN to solve the problem;
-  \item We propose attention mechansim with coverage to further improve the
-  performance of attention mechanism;
   \item The alignments in proposed attention mechanism are homologous to the
   underlying structure of propagation.
+  \item The proposed coverage in attention mechansim further improve the
+  performance of attention mechanism, including cascade prediction and
+  propagation structure inference.
+%    and also  We propose coverage
+%   in attention mechansim to further improve the performance of attention mechanism;
 \end{itemize}
 % 1) We exploit crossing dependency problem existed in traditional sequence
 % modeling when applied to model cascade dynamics and proposed attention-based 
@@ -205,7 +216,8 @@ More specifically, our work makes the following contributions:
 We conduct extensive experiments on synthetic
 and real-world datasets. Compared with several widely-used methods in cascade
 dynamics modeling, our proposed models consistently outperform them at
-predicting next propagations. 
+cascade prediction.
+% predicting next propagations. 
 
 % we exploit quantitative analysis to
 % understand 

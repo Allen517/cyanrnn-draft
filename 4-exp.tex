@@ -2,9 +2,9 @@
 \label{sec:exp}
 In this section, we conduct empirical experiments to demonstrate the
 effectiveness of CYAN-RNN on cascade dynamics modeling. We compare the proposed
-model to the state-of-the-art cascade dynamics modeling methods on both
-synthetic and real data showing that CYAN-RNN can better model next
-propagations and infer the dependence structure in cascades.
+model to the state-of-the-art modeling methods on both
+synthetic and real data showing that CYAN-RNN can better model cascade dynamics
+and infer propagation structure.
 
 \subsection{Baselines}
 % We choose Recurrent Marked Temporal Point Process (RMTPP)~\cite{DuKDD2016} as
@@ -22,8 +22,8 @@ propagations and infer the dependence structure in cascades.
 
 Rare methods can predict next propagations completely including both next
 activated users and time. To better illustrate the performance of our
-proposed model, we choose the state-of-the-art models for either predicting
-next activated users or predicting next activated time for comparisons in two
+proposed model, we choose the state-of-the-art modeling methods for either
+predicting next activated users or predicting next activated time for comparisons in two
 prediction tasks.
 
 (1) Prediction of next activated user
@@ -60,19 +60,19 @@ temporal sequences.
 \subsection{Synthetic Data and Results Anlaysis}
 The goal of the experiments on synthetic
 data is to understand how the underlying network structure and propagation
-model affect our proposed model on both next propagation prediction and
+model affect our proposed model on both cascade prediction and
 dependency structure inference. 
 
 \noindent{\textbf{Experimental setup.}} 
 We use Kroneck
 generator~\cite{LeskovecICML07} to examine two types of networks with directed
-edges: 1) the Core-Periphery (CP) network (Kroneck parameter matrix $[0.962,
-0.535; 0.535, 0.107]$), mimicing real-world social networks; 2) the Erd\H{o}s-R{\'e}nyi random
-(Random) network~\cite{Erdos60} ($[0.5, 0.5; 0.5, 0.5]$). The incubation time
+edges: 1) the Core-Periphery (CP) network~\cite{LeskovecWWW08} (Kroneck
+parameter matrix $[0.962, 0.535; 0.535, 0.107]$), mimicing real-world social networks; 2) the
+Erd\H{o}s-R{\'e}nyi random (Random) network~\cite{Erdos60} ($[0.5, 0.5; 0.5, 0.5]$). The incubation time
 from activated user to anther on networks are sampled from two distributions: 1)
 mixed exponential (Exp) distributions, controlled by rate parameters $\alpha$
-randomly choosing in $[0.01, 10]$; 2) rayleigh (Ray) distribution, controlled by
-scale parameters $\beta$ randomly choosing in $[0.01, 10]$. To generate a
+in $[0.01, 10]$; 2) mixed rayleigh (Ray) distribution, controlled
+by scale parameters $\beta$ in $[0.01, 10]$. To generate a
 cascade, we randomly choose a root user as the source of the cascade at first.
 For each neighbor of the activated user, its activated time is determined by
 incubation time. The propagation process will further conitune  in
@@ -80,8 +80,8 @@ breadth-first fashion until the overall time exceed the predefined observation
 time window or no new user being activated. In our experiments, we set the total
 number of users $|U|=32$ and the maximal observation time $\max\{t\}=100$.
 As a result, four kinds of datasets are obtained by the different unions between
-network and cascade generation distribution, i.e., (CP, Exp), (CP, Rayleign),
-(Random, Exp) and (Random, Rayleign). The number of simulated cascades is up to
+network and cascade generation distribution, denoted by (CP, Exp), (CP, Ray),
+(Random, Exp) and (Random, Ray). The number of simulated cascades is up to
 20,000 in each dataset, where we randomly pick up 80\% of completed sequences for training and the rest sequences are
 divided into two parts equally as validation and test set respectively. 
 % The policy of seperating dataset is uniform in real data.
@@ -127,7 +127,8 @@ next activated user and time on real data.}
 We regard the prediction task on next activated user as a ranking problem
 with respect to transition probabilities. The predictive performance is
 evaluated by \textit{Accuracy on top} $k$ (Acc@$k$) and \textit{Mean Reciprocal Rank}
-(MRR)~\cite{voorhees1999trec}, functionized in top $k$ and global perspectives.
+(MRR)~\cite{voorhees1999trec}.
+% , functionized in top $k$ and global perspectives.
 The larger values in Acc@$k$ and MRR indicate the better performance.
 On the prediction of next activated time, we use Root Mean Square Deviation
 (RMSE) between estimated time and practical occuring time. The better
@@ -137,7 +138,7 @@ performance means the small values in RMSE.
 We conduct experiments on all four
 kinds of datasets. We firstly compare the predictive preformance on
 next activated users. The results on predictions of next
-activated users and time are shown in Fig.~\ref{fig:pred_usr_toy_cp_exp}$\sim$
+activated users are shown in Fig.~\ref{fig:pred_usr_toy_cp_exp}$\sim$
 \ref{fig:pred_usr_toy_rand_ray}. As shown in the figures, CYAN-RNN and CYAN-RNN(cov)
 perform consistently and significantly better than other baselines in metrics of
 Acc@1, Acc@5 and MRR, included in all datasets. 

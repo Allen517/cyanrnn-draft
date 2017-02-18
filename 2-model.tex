@@ -212,11 +212,11 @@ of crossing dependency problem, the proposed model still suffer
 \emph{over-dependent} and \emph{under-dependent} problems in
 attention mechanism.
 As the exmaple shown in Fig.~\ref{fig:mot}, if the user $u_1$ is an influential
-user and his propagation is key to the cascade, the propagation activated by
+user and her propagation is key to the cascade, the propagation activated by
 $u_4$ may perfer to depend more on embedding of $(t_1, u_1)$ instead of $(t_2, u_2)$.
-Here embedding of $(t_1, u_1)$ is over-dependent and embedding of $(t_2, u_2)$
-is under-dependent. In practice, it is a common phenomenon that users may have a
-higher probability activated by recent propagation than past ones~\cite{} and we
+Embedding of $(t_1, u_1)$ is over-dependent and embedding of $(t_2, u_2)$
+is under-dependent in this case. In practice, it is a common phenomenon that
+users may have a higher probability activated by recent propagation than past ones~\cite{} and we
 also conduct experiments to illustrate it (see section~\ref{sec:exp}).
 
 The two problems are caused by memoryless of dynamic attention mechanism.

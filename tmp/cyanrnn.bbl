@@ -85,6 +85,14 @@ Jure Leskovec and Christos Faloutsos.
 \newblock In {\em Proceedings of the 24th International Conference on Machine
   Learning}, ICML '07, pages 497--504, New York, NY, USA, 2007. ACM.
 
+\bibitem[\protect\citeauthoryear{Leskovec \bgroup \em et al.\egroup
+  }{2008}]{LeskovecWWW08}
+Jure Leskovec, Kevin~J. Lang, Anirban Dasgupta, and Michael~W. Mahoney.
+\newblock Statistical properties of community structure in large social and
+  information networks.
+\newblock In {\em Proceedings of the 17th International Conference on World
+  Wide Web}, WWW '08, pages 695--704, New York, NY, USA, 2008. ACM.
+
 \bibitem[\protect\citeauthoryear{Manavoglu \bgroup \em et al.\egroup
   }{2003}]{Manavoglu2003userbehaviormodels}
 Eren Manavoglu, Dmitry Pavlov, and C.~Lee Giles.

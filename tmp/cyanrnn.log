@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  18 FEB 2017 19:13
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  19 FEB 2017 00:31
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -255,14 +255,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 178.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 186.
 
 
 (/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
 )
 (./2-model.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
@@ -288,11 +288,8 @@ Underfull \hbox (badness 1117) in paragraph at lines 222--227
  []
 
 [3]) (./3-opt.tex) (./4-exp.tex
-Underfull \hbox (badness 3635) in paragraph at lines 66--88
-\OT1/ptm/m/n/10 pa-ram-e-ter ma-trix $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 :\OT1/
-cmr/m/n/10 962\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/
-n/10 535; 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 535\OML/cmm/m/it/10 ; \OT1/cmr/m/n
-/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 107]$\OT1/ptm/m/n/10 ), mimic-ing
+Underfull \hbox (badness 2197) in paragraph at lines 66--88
+\OT1/ptm/m/n/10 with di-rected edges: 1) the Core-Periphery (CP) net-
  []
 
 File: figs/toy_mrr-cp-exp.png Graphic file (type QTm)
@@ -322,7 +319,7 @@ File: figs/case_align-cov.png Graphic file (type QTm)
 Underfull \vbox (badness 2351) has occurred while \output is active []
 
  [5]
-Overfull \hbox (2.73843pt too wide) in alignment at lines 237--241
+Overfull \hbox (2.73843pt too wide) in alignment at lines 238--242
 [][][]
  []
 
@@ -378,31 +375,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--81
  []
 
 
-Underfull \hbox (badness 5592) in paragraph at lines 97--101
+Underfull \hbox (badness 5592) in paragraph at lines 105--109
 [][]\OT1/ptm/m/n/10 Tomas Mikolov, Mar-tin Karafi[]at,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
+Underfull \hbox (badness 10000) in paragraph at lines 118--121
 [][]\OT1/ptm/m/n/10 Martin Sun-der-meyer, Ralf
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--137
+Underfull \hbox (badness 10000) in paragraph at lines 140--145
 [][]\OT1/ptm/m/n/10 Yongqing Wang, Huawei Shen,
  []
 
 
-Underfull \hbox (badness 4366) in paragraph at lines 132--137
+Underfull \hbox (badness 4366) in paragraph at lines 140--145
 \OT1/ptm/m/n/10 la-tent in-flu-ence and sus-cep-ti-bil-ity from in-for-ma-tion
  []
 
 ) [7] (./cyanrnn.aux) ) 
 Here is how much of TeX's memory you used:
- 2394 strings out of 493938
- 31131 string characters out of 6145737
- 90293 words of memory out of 5000000
- 5610 multiletter control sequences out of 15000+600000
+ 2395 strings out of 493938
+ 31146 string characters out of 6145737
+ 90322 words of memory out of 5000000
+ 5611 multiletter control sequences out of 15000+600000
  20891 words of font info for 64 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  28i,11n,26p,545b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
