@@ -81,6 +81,43 @@ prediction tasks.
 %   (RMTPP) is a method which can models both next activated user and time based on RNN.
 % \end{itemize}
 
+\begin{figure*}[t]
+\centering
+\subfigure[CP, Exp] {
+\label{fig:pred_usr_toy_cp_exp}
+\includegraphics[width=0.235\textwidth]{figs/toy_mrr-cp-exp.png}
+}
+\subfigure[CP, Rayleign] {
+\label{fig:pred_usr_toy_cp_ray}
+\includegraphics[width=0.235\textwidth]{figs/toy_mrr-cp-ray.png}
+}
+\subfigure[Random, Exp] {
+\label{fig:pred_usr_toy_rand_exp}
+\includegraphics[width=0.235\textwidth]{figs/toy_mrr-rand-exp.png}
+}
+\subfigure[Random, Rayleign] {
+\label{fig:pred_usr_toy_rand_ray}
+\includegraphics[width=0.235\textwidth]{figs/toy_mrr-rand-ray.png}
+}
+\subfigure[RMSE on toy data] {
+\label{fig:pred_tm_toy_rmse}
+\includegraphics[width=0.235\textwidth]{figs/toy_rmse.png}
+}
+\subfigure[Real data] {
+\label{fig:pred_usr_real}
+\includegraphics[width=0.235\textwidth]{figs/real_mrr.png}
+}
+\subfigure[RMSE on real data] {
+\label{fig:pred_tm_real_rmse}
+\includegraphics[width=0.235\textwidth]{figs/real_rmse.png}
+}
+
+\caption{Comparisons on baselines and our proposed models. (a)$\sim$(e) The
+predictions of next activated user and time on toy data produced
+from different networks and propagation models; (f) and (g) The predictions of
+next activated user and time on real data.}
+\end{figure*}
+
 \subsection{Synthetic Data and Results Anlaysis}
 The goal of the experiments on synthetic
 data is to understand how the underlying network structure and propagation
@@ -120,43 +157,6 @@ The larger values in Acc@$k$ and MRR indicate the better performance.
 On the prediction of next activated time, we use Root Mean Square Deviation
 (RMSE) between estimated time and practical occuring time. The better
 performance means the small values in RMSE.   
-
-\begin{figure*}[t]
-\centering
-\subfigure[CP, Exp] {
-\label{fig:pred_usr_toy_cp_exp}
-\includegraphics[width=0.235\textwidth]{figs/toy_mrr-cp-exp.png}
-}
-\subfigure[CP, Rayleign] {
-\label{fig:pred_usr_toy_cp_ray}
-\includegraphics[width=0.235\textwidth]{figs/toy_mrr-cp-ray.png}
-}
-\subfigure[Random, Exp] {
-\label{fig:pred_usr_toy_rand_exp}
-\includegraphics[width=0.235\textwidth]{figs/toy_mrr-rand-exp.png}
-}
-\subfigure[Random, Rayleign] {
-\label{fig:pred_usr_toy_rand_ray}
-\includegraphics[width=0.235\textwidth]{figs/toy_mrr-rand-ray.png}
-}
-\subfigure[RMSE on toy data] {
-\label{fig:pred_tm_toy_rmse}
-\includegraphics[width=0.235\textwidth]{figs/toy_rmse.png}
-}
-\subfigure[Real data] {
-\label{fig:pred_usr_real}
-\includegraphics[width=0.235\textwidth]{figs/real_mrr.png}
-}
-\subfigure[RMSE on real data] {
-\label{fig:pred_tm_real_rmse}
-\includegraphics[width=0.235\textwidth]{figs/real_rmse.png}
-}
-
-\caption{Comparisons on baselines and our proposed models. (a)$\sim$(e) The
-predictions of next activated user and time on toy data produced
-from different networks and propagation models; (f) and (g) The predictions of
-next activated user and time on real data.}
-\end{figure*}
 
 \noindent{\textbf{Prediction results.}} 
 We regard the prediction task on next activated user as a ranking problem
@@ -228,7 +228,7 @@ alignments inferred by CYAN-RNN(cov).
 }
 \end{figure}
 
-\noindent{\textbf{Alignment accurary}} 
+\noindent{\textbf{Alignment quality}} 
 We expect to check if coverage can reduce the over-dependence and
 under-dependence mentioned in section~\ref{sec:coverage}.
 Fig.~\ref{fig:cyan_deps} and \ref{fig:cyan_cov_deps} show the results. Every grid
@@ -239,22 +239,32 @@ propagation. From this we see which positions in the past propagations
 were considered more important when predicting next propagation. Comparing to
 the alignments in CYAN-RNN, we can observe that the alignments in CYAN-RNN(cov)
 concentrate more on unused propagation embeddings, which is consistent to
-well-studied phenomonen in published works~\cite{}. Moreover, we wonder if the
-inferred alignments is homologous to true propagation structures. Thus, we
+preference of users' interests on recent propagations. Moreover, we wonder if
+the inferred alignments is homologous to true propagation structures. Thus, we
 calculate alignments on each step of cascades in test data. We suggest that the
-propagation structure of next propagation can be inferred by the largest
-alignment at each step. We then get a matrix of statistic results based on all inferred
-structures. Every column in the matrix refers to the number of who mainly
-activate the propagation. As the high connection between propagation
-structure and network, the inferred structures would be the edges in
-network. Therefore, we normalize the matrix by rows, and check if the
-network edges can be classified by the matrix. As the
-inference results are same in other two datasets, we only show the AUC values
-computed by the models trained in dataset of (CP, Exp) and (Random, Exp),
-decribed in Table~\ref{t:auc_net_inf}. The results from our proposed models
-are both worked in network inference. Besides, CYAN-RNN(cov) obtain better results of
-network inference than CYAN-RNN in two test data. It indicates that our
-proposed alignment mechanism can be natually used in inference of hidden
+propagation structure can be referred by the largest
+alignment at each step. Through the counting on these largest
+alignments, we get a matrix where every column refers to the number of who
+mainly activate the next user. As the high relationship between propagation
+structure and network, we can use the matrix to infer network. 
+% We then get a matrix of statistic results based on all inferred
+% structures.
+% Every column in the matrix refers to the number of who mainly activate the propagation. As the high connection between propagation structure and network, the inferred structures would be the edges in
+% network. Therefore, 
+We normalize the matrix by rows, and check if the
+network edges can be classified by the matrix. The visualization of network
+inference is depicted in
+Fig.~\ref{fig:att_cp_infer}$\sim$~\ref{fig:cov_rand_infer}. High
+accuracy of network inference is recieved by CYAN-RNN and CYAN-RNN(cov) in
+CP network, especially in Random network.
+% As the
+% inference results are same in other two datasets, we only show the AUC values
+% computed by the models trained in dataset of (CP, Exp) and (Random, Exp),
+% decribed in Table~\ref{t:auc_net_inf}. The results from our proposed models
+% are both worked in network inference. Besides, CYAN-RNN(cov) obtain better results of
+% network inference than CYAN-RNN in two test data. 
+It indicates that our
+proposed alignment mechanism can be natually used in inferring hidden
 propagation structure, which may have some potential applications in practice,
 e.g., advertisement and recommendation.
 
@@ -269,22 +279,26 @@ e.g., advertisement and recommendation.
 \begin{figure}
 \centering
 \subfigure[] {
-\label{fig:}
+\label{fig:att_cp_infer}
 \includegraphics[width=0.1\textwidth]{figs/att-cp-exp-infer.eps}
 }
 \subfigure[] {
-\label{fig:}
+\label{fig:cov_cp_infer}
 \includegraphics[width=0.1\textwidth]{figs/cov-cp-exp-infer.eps}
 }
 \subfigure[] {
-\label{fig:}
+\label{fig:att_rand_infer}
 \includegraphics[width=0.1\textwidth]{figs/att-random-exp-infer.eps}
 }
 \subfigure[] {
-\label{fig:}
+\label{fig:cov_rand_infer}
 \includegraphics[width=0.1\textwidth]{figs/cov-random-exp-infer.eps}
 }
-\caption{
+\caption{Visualization of network inference. Edges in grey are the correct
+inferred edges, while edges highlighted in red are either missed or estimated
+falsely. (a) and (b) CP network inferred by CYAN-RNN and CYAN-RNN(cov)
+respectively; (c) and (d) Random network inferred by CYAN-RNN and CYAN-RNN(cov)
+respectively.
 }
 \end{figure}
 
