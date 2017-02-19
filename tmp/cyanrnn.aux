@@ -8,23 +8,21 @@
 \citation{mikolov2010recurrent}
 \citation{sundermeyer2012lstm}
 \citation{DuKDD2016}
-\citation{bahdanau2014neural}
-\citation{tu2016modeling}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
 \newlabel{fig:mot}{{1}{1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  An example of crossing dependency problem in sequence modeling. }}{1}}
+\citation{bahdanau2014neural}
+\citation{tu2016modeling}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Model}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Background}{2}}
 \newlabel{eq:cond_prob}{{2.1}{2}}
 \newlabel{eq:pooling_frame}{{1}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Attention Mechanism}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The architecture of CYAN-RNN. The figure presents the case when modeling the generation of the $(k+1)$-th propagation. The sequence at bottom is the observed propagations and the sequence at top is the predictive propagations. The blue rectangles refer to representations of hidden units. The yellow rectangle is a general form of attention function $s_k=\textit  {AttentionFunc}(t_{k-1}, \{h_1,\ldots  ,h_k\})$.}}{3}}
 \newlabel{fig:cyrnn_frame}{{2}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Attention Mechanism}{3}}
 \newlabel{eq:target_embedding}{{2}{3}}
 \newlabel{eq:alpha}{{3}{3}}
 \newlabel{eq:score}{{4}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Coverage}{3}}
-\newlabel{sec:coverage}{{2.3}{3}}
 \newlabel{fig:att}{{3(a)}{3}}
 \newlabel{sub@fig:att}{{(a)}{3}}
 \newlabel{fig:cov}{{3(b)}{3}}
@@ -32,7 +30,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Two kinds of implementation on attention layer. (a) The attention mechanism applied in CYAN-RNN; (b) The attention mechanism with coverage applied in CYAN-RNN (cov). Note that $\textbf  {h}_k=(h_1,\ldots  ,h_k)$ is matrix assembled by all historical propagation embeddings at step $k$, and $\textbf  {V}_k=(V_1,\ldots  ,V_k)$ is a coverage martix containing all coverage vectors at step $k$.}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{3}}
-\newlabel{eq:cov}{{5}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Coverage}{3}}
+\newlabel{sec:coverage}{{2.3}{3}}
 \citation{chauvin1995backpropagation}
 \citation{chung2014empirical}
 \citation{kingma2015method}
@@ -45,6 +44,7 @@
 \citation{LeskovecICML07}
 \citation{LeskovecWWW08}
 \citation{Erdos60}
+\newlabel{eq:cov}{{5}{4}}
 \newlabel{eq:att_cov}{{6}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Length of Dependence}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Optimization}{4}}

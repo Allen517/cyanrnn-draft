@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  20 FEB 2017 03:13
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  20 FEB 2017 03:43
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -247,15 +247,14 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 (./0-abstract.tex) (./1-intro.tex
 File: figs/mot.eps Graphic file (type eps)
- <figs/mot.eps>
-Missing character: There is no ’ in font ptmr7t!
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
- [1
+ <figs/mot.eps> [1
 
 
 
 ]
+Missing character: There is no ’ in font ptmr7t!
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 193.
 
 
@@ -312,14 +311,11 @@ Underfull \hbox (badness 2197) in paragraph at lines 127--149
 \OT1/ptm/m/n/10 with di-rected edges: 1) the Core-Periphery (CP) net-
  []
 
-[4]
+[4] [5]
 File: figs/case_align-att.png Graphic file (type QTm)
  <use  "figs/case_align-att.png" >
 File: figs/case_align-cov.png Graphic file (type QTm)
  <use  "figs/case_align-cov.png" >
-Underfull \vbox (badness 3907) has occurred while \output is active []
-
- [5]
 File: figs/att-cp-exp-infer.eps Graphic file (type eps)
 
 <figs/att-cp-exp-infer.eps>
@@ -329,8 +325,11 @@ File: figs/att-random-exp-infer.eps Graphic file (type eps)
 
 <figs/att-random-exp-infer.eps>
 File: figs/cov-random-exp-infer.eps Graphic file (type eps)
- <figs/cov-random-exp-infer.eps>)
-(./6-conclusion.tex) [6] (./cyanrnn.bbl
+ <figs/cov-random-exp-infer.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(./6-conclusion.tex [6]) (./cyanrnn.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 5--9
 [][]\OT1/ptm/m/n/10 Dzmitry Bah-danau, Kyunghyun
  []
@@ -407,7 +406,7 @@ Underfull \hbox (badness 4366) in paragraph at lines 140--145
 Here is how much of TeX's memory you used:
  2406 strings out of 493938
  31446 string characters out of 6145737
- 92391 words of memory out of 5000000
+ 93391 words of memory out of 5000000
  5618 multiletter control sequences out of 15000+600000
  20343 words of font info for 63 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
