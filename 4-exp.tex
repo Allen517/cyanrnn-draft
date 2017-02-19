@@ -255,17 +255,38 @@ e.g., advertisement and recommendation.
 % between propagation structures and network, we expect the connection between
 % next propagation and corresponding 
 
-
-\begin{table}[h!]
+\begin{figure}
 \centering
-\caption{AUC values of network inference.}
-\begin{tabular*}{.38\textwidth}{c|cc} \hline
-Network & CYAN-RNN & CYAN-RNN(cov) \\ \hline
-CP & 0.83 & 0.84 \\
-Random & 0.95 & 0.96 \\ \hline
-\end{tabular*}
-\label{t:auc_net_inf}
-\end{table}
+\subfigure[] {
+\label{fig:}
+\includegraphics[width=0.1\textwidth]{figs/att-cp-exp-infer.eps}
+}
+\subfigure[] {
+\label{fig:}
+\includegraphics[width=0.1\textwidth]{figs/cov-cp-exp-infer.eps}
+}
+\subfigure[] {
+\label{fig:}
+\includegraphics[width=0.1\textwidth]{figs/att-random-exp-infer.eps}
+}
+\subfigure[] {
+\label{fig:}
+\includegraphics[width=0.1\textwidth]{figs/cov-random-exp-infer.eps}
+}
+\caption{
+}
+\end{figure}
+
+% \begin{table}[h!]
+% \centering
+% \caption{AUC values of network inference.}
+% \begin{tabular*}{.38\textwidth}{c|cc} \hline
+% Network & CYAN-RNN & CYAN-RNN(cov) \\ \hline
+% CP & 0.83 & 0.84 \\
+% Random & 0.95 & 0.96 \\ \hline
+% \end{tabular*}
+% \label{t:auc_net_inf}
+% \end{table}
 
 % \begin{table}[h]
 % \centering
