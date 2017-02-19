@@ -26,18 +26,17 @@ proposed model, we choose the state-of-the-art modeling methods for either
 predicting next activated users or predicting next activated time for comparisons in two
 prediction tasks.
 
-(1) Prediction of next activated user
 \begin{itemize}
+  \item \textbf{RMTPP}~\cite{DuKDD2016}: Recurrent marked temporal point process
+  (RMTPP) is a method which can models both next activated user and time based on RNN.
   \item \textbf{CT Bernoulli} and \textbf{CT Jaccard}
   models~\cite{goyal2010learning}: They are continuous time propagation models.
   The propagation probabilities between two users are defined by Bernoulli or
-  Jaccard distribution and the probabilities are decayed over time.
+  Jaccard distribution and the probabilities are decayed over time. The two
+  models can be used to predict next activated users.
   \item \textbf{MC-1} Model: The markov chain model is a classic sequence
-  modeling method. Here we compare with markov chain with order one.
-\end{itemize}
-
-(2) Prediction of next activated time 
-\begin{itemize}
+  modeling method, depicting the generation of activated users. Here
+  we compare with markov chain with order one.
   \item \textbf{Poisson process} model~\cite{vere1988introduction}: It is a
   stoachastic point process model, depicting the time consuming from one
   propagation to another. The intensity function is parameterized by a constant.
@@ -47,15 +46,40 @@ prediction tasks.
   \label{eq:hawke_intens_func}
   \lambda(t)=\lambda(0)+\alpha\sum_{t_i<t}\exp\left(-\frac{t-t_i}{\sigma}\right),
   \end{equation}
-  where $\sigma=1$ and $\lambda(0)$ is a intrinsic rate when $t=0$.
+   where $\lambda(0)$ is a intrinsic rate when $t=0$. We set $\sigma=1$ in our
+   experiments.
 \end{itemize}
 
-We also compare with the model that has the ability to generate both mark and
-temporal sequences.
-\begin{itemize}
-  \item \textbf{RMTPP}~\cite{DuKDD2016}: Recurrent marked temporal point process
-  (RMTPP) is a method which can models both next activated user and time based on RNN.
-\end{itemize}
+% (1) Prediction of next activated user
+% \begin{itemize}
+%   \item \textbf{CT Bernoulli} and \textbf{CT Jaccard}
+%   models~\cite{goyal2010learning}: They are continuous time propagation models.
+%   The propagation probabilities between two users are defined by Bernoulli or
+%   Jaccard distribution and the probabilities are decayed over time.
+%   \item \textbf{MC-1} Model: The markov chain model is a classic sequence
+%   modeling method. Here we compare with markov chain with order one.
+% \end{itemize}
+% 
+% (2) Prediction of next activated time 
+% \begin{itemize}
+%   \item \textbf{Poisson process} model~\cite{vere1988introduction}: It is a
+%   stoachastic point process model, depicting the time consuming from one
+%   propagation to another. The intensity function is parameterized by a constant.
+%   \item \textbf{Hawkes process} model~\cite{hawkes1971spectra}: It is a
+%   stochastic point process model where the intensity function is parameterized by
+%   \begin{equation} 
+%   \label{eq:hawke_intens_func}
+%   \lambda(t)=\lambda(0)+\alpha\sum_{t_i<t}\exp\left(-\frac{t-t_i}{\sigma}\right),
+%   \end{equation}
+%   where $\sigma=1$ and $\lambda(0)$ is a intrinsic rate when $t=0$.
+% \end{itemize}
+% 
+% We also compare with the model that has the ability to generate both mark and
+% temporal sequences.
+% \begin{itemize}
+%   \item \textbf{RMTPP}~\cite{DuKDD2016}: Recurrent marked temporal point process
+%   (RMTPP) is a method which can models both next activated user and time based on RNN.
+% \end{itemize}
 
 \subsection{Synthetic Data and Results Anlaysis}
 The goal of the experiments on synthetic
@@ -86,7 +110,18 @@ network and cascade generation distribution, denoted by (CP, Exp), (CP, Ray),
 divided into two parts equally as validation and test set respectively. 
 % The policy of seperating dataset is uniform in real data.
 
-\begin{figure*}[ht!]
+\noindent{\textbf{Evaluation metrics.}} 
+We regard the prediction task on next activated user as a ranking problem
+with respect to transition probabilities. The predictive performance is
+evaluated by \textit{Accuracy on top} $k$ (Acc@$k$) and \textit{Mean Reciprocal Rank}
+(MRR)~\cite{voorhees1999trec}.
+% , functionized in top $k$ and global perspectives.
+The larger values in Acc@$k$ and MRR indicate the better performance.
+On the prediction of next activated time, we use Root Mean Square Deviation
+(RMSE) between estimated time and practical occuring time. The better
+performance means the small values in RMSE.   
+
+\begin{figure*}[t]
 \centering
 \subfigure[CP, Exp] {
 \label{fig:pred_usr_toy_cp_exp}
@@ -122,17 +157,6 @@ predictions of next activated user and time on toy data produced
 from different networks and propagation models; (f) and (g) The predictions of
 next activated user and time on real data.}
 \end{figure*}
-
-\noindent{\textbf{Evaluation metrics.}} 
-We regard the prediction task on next activated user as a ranking problem
-with respect to transition probabilities. The predictive performance is
-evaluated by \textit{Accuracy on top} $k$ (Acc@$k$) and \textit{Mean Reciprocal Rank}
-(MRR)~\cite{voorhees1999trec}.
-% , functionized in top $k$ and global perspectives.
-The larger values in Acc@$k$ and MRR indicate the better performance.
-On the prediction of next activated time, we use Root Mean Square Deviation
-(RMSE) between estimated time and practical occuring time. The better
-performance means the small values in RMSE.   
 
 \noindent{\textbf{Prediction results.}} 
 We conduct experiments on all four
