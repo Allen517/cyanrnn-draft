@@ -1,7 +1,7 @@
 \section{Introduction}
 
 The emergence of Social Media platform has revolutionized dissemination of
-information via its great ease in inforamtion delivery, accessing and filtering. 
+information via its great ease in information delivery, accessing and filtering. 
 In Social Media, pieces of information, posted by users spontaneously, propagate
 along social relationships between users, explict or implict, forming cascade dynamics.
 Modeling cascade dynamics is the fundamental to understand information
@@ -136,21 +136,27 @@ hidden social network structure.
 % searching the optimal cascade dynamics models, which may have great probability
 % to better model cascade dynamics. 
 
-Despite of advantages in sequence modeling, the traditional methods
+Despite of advantages in RNN, the traditional methods (e.g., LSTM, GRU)
 may meet ``crossing dependency'' problem in cascade dynamics modeling, mainly
 caused by
 %  The crossing dependencies problem is mainly caused by 
-tree structure of propagation. Fig.~\ref{fig:mot} shows the crossing
-dependency dilemma in practical. 
-As consideration
-of tree strucutre of propagations, we need to construct the dependence between
-the 1st and the 3rd propagations, causing redundant information usage passing
+tree-structured propagation. Fig.~\ref{fig:mot} shows the crossing
+dependency dilemma in practice. 
+As consideration of cascade tree, we need to construct the
+dependence between the 1st and the 3rd propagations, causing redundant information usage passing
 from the 2nd one (the transitive dependence marked as grey in time
 line). If we abandon information inherited from the 2nd propagation, the
 generation of 4th propagation will lose useful information from the 2nd
 one as the corresponding user $u_4$ is directly connected to $u_2$ on the
-cascade tree
-(the transitive dependence marked as red in time line). 
+cascade tree (the transitive dependence marked as red in time line). For better
+applying RNN in cascade dynamics modeling, we construct a pooling layer
+above the hidden units of RNN in order to build direct alignments between
+the next propagation and current histories. We choose attention
+mechanism~\cite{bahdanau2014neural} to realize the pooling layer, where the
+alignments can be automatically learned by maximizing the likelihood of cascade.
+Moreover, we propose coverage~\cite{tu2016modeling} to lead alignments focused
+more on recent propagations, following the similar perference of users’ interests in
+real system. 
 % For modeling the dependence between the 1st
 % and 3rd propagation, we must use redundant information passing from the 2nd
 % one.
@@ -162,18 +168,19 @@ cascade tree
 % useful information from 3rd event, called ``cut-off modeling''. Crossing
 % dependency problems limit the efficiency of sequence modeling.
 In this paper, we propose a \textbf{C}ascade d\textbf{Y}namics
-modeling with \textbf{A}ttentio\textbf{N}-based RNN (CYAN-RNN) to better
-apply RNN in cascade dynamics modeling. We construct a dynamic pooling
-layer above hidden units of RNN, aggregating all embeddings of hidden units
-until current step. The generation of following propagation is relied on the
-aggregated embedding. 
-% The weights in pooling layer pointing to each historical event
-% embedding refers to connections between current event and history. 
-We choose attention mechanism~\cite{bahdanau2014neural} to realize the pooling layer,
-where the parameters can be automatically learned by maximizing the
-likelihood of cascade. Moreover, we propose coverage in attention mechanism to
-ensure sufficient usage of each historical embedding involved in generation of
-following propagations.
+modeling with \textbf{A}ttentio\textbf{N}-based RNN (CYAN-RNN) and CYAN-RNN(cov)
+to better apply RNN with attention mechanism and coverage in cascade dynamics
+modeling.
+% We construct a dynamic pooling layer above hidden units of RNN, aggregating all embeddings of hidden units
+% until current step. The generation of following propagation is relied on the
+% aggregated embedding. 
+% % The weights in pooling layer pointing to each historical event
+% % embedding refers to connections between current event and history. 
+% We choose attention mechanism~\cite{bahdanau2014neural} to realize the pooling layer,
+% where the parameters can be automatically learned by maximizing the
+% likelihood of cascade. Moreover, we propose coverage in attention mechanism to
+% ensure sufficient usage of each historical embedding involved in generation of
+% following propagations.
 % CYAN-RNN(cov) to construct coverage
 % on attention mechanism in order to solve over-dependent and under-dependent
 % problem existed in CYAN-RNN. 
@@ -183,14 +190,20 @@ following propagations.
 % The benifits of our proposed model are three-fold: 
 More specifically, our work makes the following contributions:
 \begin{itemize}
-  \item We exploit crossing dependency problem existed in traditional sequence
-  modeling when applied to model cascade dynamics and proposed attention-based
-  RNN to solve the problem;
-  \item The alignments in proposed attention mechanism are homologous to the
-  underlying structure of propagation.
-  \item The proposed coverage in attention mechansim further improve the
-  performance of attention mechanism, including cascade prediction and
-  propagation structure inference.
+  \item \textbf{Awareness of crossing dependency:} We exploit crossing
+  dependency problem existed in RNN when applied to
+  model cascade dynamics and proposed an attention-based RNN to solve the
+  problem;
+  \item \textbf{Coverage:} We further propose coverage in
+  proprosed attenion-based RNN so that the alignments in attenion mechanism can
+  reflect the perference of users' interests in real system; 
+  \item \textbf{Effectiveness:} The learned alignments in proposed models can
+  reflect true propagation structure and the proposed models consistently
+  outperform competitive baselines in multiple prediction tasks.
+%   are homologous to the underlying structure of propagation.
+%   The proposed coverage in attention mechansim further improve the
+%   performance of attention mechanism, including cascade prediction and
+%   propagation structure inference.
 %    and also  We propose coverage
 %   in attention mechansim to further improve the performance of attention mechanism;
 \end{itemize}
@@ -213,10 +226,10 @@ More specifically, our work makes the following contributions:
 % point out crossing dependency problem in
 % traditional sequence modeling when model cascade dynamics. Thus, we
 % proposed CYAN-RNN to solve the problem; 
-We conduct extensive experiments on synthetic
-and real-world datasets. Compared with several widely-used methods in cascade
-dynamics modeling, our proposed models consistently outperform them at
-cascade prediction.
+% We conduct extensive experiments on synthetic
+% and real-world datasets. Compared with several widely-used methods in cascade
+% dynamics modeling, our proposed models consistently outperform them at
+% cascade prediction.
 % predicting next propagations. 
 
 % we exploit quantitative analysis to

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  20 FEB 2017 01:04
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2014.2.27)  20 FEB 2017 03:13
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -248,39 +248,34 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (./0-abstract.tex) (./1-intro.tex
 File: figs/mot.eps Graphic file (type eps)
  <figs/mot.eps>
+Missing character: There is no ’ in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 164.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
  [1
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 186.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 193.
 
 
 (/usr/local/install/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 193.
 )
 (./2-model.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 13.
 
-Underfull \hbox (badness 1888) in paragraph at lines 113--120
+Underfull \hbox (badness 1888) in paragraph at lines 114--121
 [][]\OT1/ptm/m/n/10 However, RNN suf-fers cross-ing de-pen-dency prob-lem
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 113--120
-\OT1/ptm/m/n/10 a pool-ing layer above the hid-den units at each $\OML/cmm/m/it
-/10 k$ \OT1/ptm/m/n/10 step
  []
 
 File: figs/cyanrnn_framework.png Graphic file (type QTm)
 <use  "figs/cyanrnn_framework.png" >
-Underfull \hbox (badness 1253) in paragraph at lines 148--148
+Underfull \hbox (badness 1253) in paragraph at lines 151--151
 [][]\OT1/ptm/m/n/10 Figure 2: The ar-chi-tec-ture of CYAN-RNN. The fig-ure
  []
 
@@ -288,28 +283,25 @@ Underfull \hbox (badness 1253) in paragraph at lines 148--148
 File: figs/att.eps Graphic file (type eps)
  <figs/att.eps>
 File: figs/cov.eps Graphic file (type eps)
- <figs/cov.eps>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3])
-(./3-opt.tex) (./4-exp.tex
+ <figs/cov.eps> [3]) (./3-opt.tex) (./4-exp.tex
 File: figs/toy_mrr-cp-exp.png Graphic file (type QTm)
- <use  "figs/toy_mrr-cp-exp.png" >
+
+<use  "figs/toy_mrr-cp-exp.png" >
 File: figs/toy_mrr-cp-ray.png Graphic file (type QTm)
-
-<use  "figs/toy_mrr-cp-ray.png" >
+ <use  "figs/toy_mrr-cp-ray.png" >
 File: figs/toy_mrr-rand-exp.png Graphic file (type QTm)
- <use  "figs/toy_mrr-rand-exp.png" >
+
+<use  "figs/toy_mrr-rand-exp.png" >
 File: figs/toy_mrr-rand-ray.png Graphic file (type QTm)
-
-<use  "figs/toy_mrr-rand-ray.png" >
+ <use  "figs/toy_mrr-rand-ray.png" >
 File: figs/toy_rmse.png Graphic file (type QTm)
- <use  "figs/toy_rmse.png" >
-File: figs/real_mrr.png Graphic file (type QTm)
 
-<use  "figs/real_mrr.png" >
+<use  "figs/toy_rmse.png" >
+File: figs/real_mrr.png Graphic file (type QTm)
+ <use  "figs/real_mrr.png" >
 File: figs/real_rmse.png Graphic file (type QTm)
- <use  "figs/real_rmse.png" >
+
+<use  "figs/real_rmse.png" >
 Underfull \hbox (badness 1655) in paragraph at lines 127--149
 []\OT1/ptm/b/n/10 Data gen-er-a-tion \OT1/ptm/m/n/10 We use Kro-neck gen-er-a-t
 or [] Leskovec
@@ -389,7 +381,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--81
 [][]\OT1/ptm/m/n/10 Diederik P Kingma and
  []
 
-
+[7]
 Underfull \hbox (badness 5592) in paragraph at lines 105--109
 [][]\OT1/ptm/m/n/10 Tomas Mikolov, Mar-tin Karafi[]at,
  []
@@ -409,14 +401,16 @@ Underfull \hbox (badness 4366) in paragraph at lines 140--145
 \OT1/ptm/m/n/10 la-tent in-flu-ence and sus-cep-ti-bil-ity from in-for-ma-tion
  []
 
-) [7] (./cyanrnn.aux) ) 
+) [8
+
+] (./cyanrnn.aux) ) 
 Here is how much of TeX's memory you used:
- 2407 strings out of 493938
- 31460 string characters out of 6145737
+ 2406 strings out of 493938
+ 31446 string characters out of 6145737
  92391 words of memory out of 5000000
- 5619 multiletter control sequences out of 15000+600000
- 20891 words of font info for 64 fonts, out of 8000000 for 9000
+ 5618 multiletter control sequences out of 15000+600000
+ 20343 words of font info for 63 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  28i,11n,26p,545b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cyanrnn.pdf (7 pages).
+Output written on cyanrnn.pdf (8 pages).

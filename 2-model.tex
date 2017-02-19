@@ -1,13 +1,13 @@
 \section{Model}
 
 The input data is a collection of cascades $\mathcal{C}=\{S_m\}_{m=1}^M$. 
-A cascade $S=\{(t_k, u_k)|u_k\in U, t_k\in R^+ \text{~and~}
+A cascade $S=\{(t_k, u_k)|u_k\in U, t_k\in \mathbb{R}^+ \text{~and~}
 k=1,\dots,N\}$ is a sequence of propagations ascendingly ordered by time, where $U$ refers to 
 user set in cascade. The $k$-th propagation is recorded
 as a tuple $(t_k, u_k)$ referring to pair of activated time and user.
 Let the history $\mathcal{H}_k$ be the list of activated time and user pairs up
 to the $k$-th propagation. The objective of sequence modeling in cascade dynamics is to
-formulate the conditional probability probability of next propagation
+formulate the conditional probability of next propagation
 $p((t_k, u_k)|\mathcal{H}_k)$.
 
 \subsection{Background}
@@ -15,12 +15,13 @@ $p((t_k, u_k)|\mathcal{H}_k)$.
 Firstly, we introduce RNN in cascade dynamics modeling. RNN is a feed-forward
 neural network, which can be used to generate a cascade by $N$ steps
 sequentially.
-At each step $k$, the $k$-th propagation vectorized in $x_k$ as input is fed
-into hidden units of RNN by nonlinear transformation $f$, jointly with the outputs from the last hidden units, updating the hidden state
-$h_k=\textit{RNN}(x_k,h_{k-1})$. The representation of hidden state $h_k$ can be
-considered as embedding of the $k$-th propagation, and the output is trained to predict the
-next propagation $x_{k+1}$ given $h_k$. In other words, we use RNN to
-maximize the likelihood probability of cascade,
+At step $k$, the $k$-th propagation vectorized in $x_k$ as input is fed
+into hidden units of RNN by nonlinear transformation $f$, jointly with the
+outputs from the last hidden units, updating the hidden state
+$h_k=\textit{RNN}(x_k,h_{k-1})$. The representation of hidden state $h_k$ can
+be considered as embedding of the $k$-th propagation, and the output is trained
+to predict the next propagation $x_{k+1}$ given $h_k$. In other words, we use
+RNN to maximize the likelihood probability of cascade,
 \begin{equation*}
 p(S) = \prod_{k=1}^N p((t_{k+1}, u_{k+1})|\mathcal{H}_k) = \prod_{k=1}^N
 p((t_{k+1}, u_{k+1})|h_k).
@@ -111,9 +112,9 @@ propagation patterns in cascade dynamics modeling.
 % dynamics modeling. 
 
 However, RNN suffers crossing dependency problem caused by tree-structured
-propagations in cascade, shown in Fig.~\ref{fig:mot}. One of the possible
-solutions is to construct a pooling layer above the hidden
-units at each $k$ step in order to build the direct dependence between the
+propagations in cascade, as shown in Fig.~\ref{fig:mot}. One possible
+solution is to construct a pooling layer above the hidden
+units at each step in order to build the direct dependence between the
 next propagation and all previous propagation embeddings,
 i.e., $p(x_{k+1} | \text{pooling}(h_1,\ldots,h_k))$. The simplest way of pooling can
 be formalized as
@@ -123,18 +124,20 @@ s_k=\sum_{i=1}^k \alpha_{k,i} h_i \text{,~~~~~s.t.~} \sum_{i=1}^k
 \alpha_{k,i}=1,
 \end{equation}
 where the weight $\alpha_{k,i}$ refers to the proportion of dependence between
-next propagation and the $i$-th propagation embedding. Mean pooling and max
+the next propagation and the $i$-th propagation embedding. Mean pooling and max
 pooling are two popular choices for setting weights which takes the mean or element-wise
-max of all hidden states. However, these two methods still ignore the structure
-information in cascades.
+max value of all hidden states. However, these two methods still ignore the
+structure information in cascades.
 % Mean pooling and max pooling
 % are two popular choices for setting weights which takes the mean or
 % element-wise max of all hidden states. 
 % In this way, the generation of next activation
 % can depend on any historical embedding instead of transitive dependency.
 Intuitively, the weights can be settled according to the cascade tree, yet we
-can hardly obtain the tree structure, even given the social relationships. Next
-we propose attention mechanism to implement the pooling layer. 
+can hardly obtain the tree structure, even given the social relationships. Thus
+we expect a method, learning the weights automatically according to the 
+loss in likelihood. Next we propose attention mechanism to implement the pooling
+layer.
 
 \begin{figure}[t]
 \centering
@@ -157,7 +160,7 @@ words in source sequence and attention mechanism can automatically learn the ali
 between source words and target words.
 For modeling cascade dynamics, the source sequence will be the observed
 cascade.
-The each element in target sequence is the following propagation corresponded to
+Each element in target sequence is the following propagation corresponded to
 propagation in source sequence.
 There remains one problem when applying attention mechanism in cascade dynamics
 modeling: the target is the next propagation in source
@@ -373,7 +376,7 @@ Remarkably, as the increasing context and alignments, $V_{k,k}$ and
 $\alpha_{k,k}$ have no corresponding values in $V_{k-1,.}$ and
 $\alpha_{k-1,.}$. Instead we fill up with zero in our work. 
 % Compared with $V_{k,i}$, $V_{k-1,i}$ 
-At each step $k$, the $k$-th coverage serves an additional input to the
+At step $k$, the $k$-th coverage serves an additional input to the
 attention mechanism, providing complementary information of that how about the
 dependencies of propagation embeddings are in the past. The rewritten
 alignment calculation in Eq.~(\ref{eq:score}) by coverage can be
@@ -381,9 +384,9 @@ formalized~\footnote{
 % The formalization is determined by the incremental length
 % of alignment weights. 
 If we use the last coverage $V_{k-1,.}$ instead of
-$V_{k,.}$ (like~\cite{tu2016modeling}) to update $e_{k,.}$ at each step $k$, 
+$V_{k,.}$ to update $e_{k,.}$ at step $k$, 
 we will lose certain coverage information and cause unbalanced
-calculation on $k$-th propagation embedding, proved by our preliminary
+calculation on $k$-th propagation embedding. This is proved by our preliminary
 experiments.} as
 \begin{equation}
 \label{eq:att_cov}
