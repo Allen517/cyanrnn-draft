@@ -1,20 +1,53 @@
 \section{Optimization}
 
 In this section, we introduce the learning process of our proposed models. 
-The $k$-th propagation is transformed into vector as inputs including user
-embedding and temporal features. The embedding matrix of
+Given a collection of cascades $\mathcal{C}=\{S_m\}_{m=1}^M$, we suppose that
+each cascade is independent on each other. As a result, the logarithmic
+likelihood of a set of cascades is the sum of logarithmic likelihood of individual cascade.
+In this way, the negative logarithmic likelihood of the set of cascades can be
+estimated as
+\begin{equation}
+\mathcal{L}(\mathcal{C})=-\sum_{m=1}^M \sum_{k=1}^{N_m}
+\log p((t_{k+1}, u_{k+1})|x_k, T_k, s_k),
+\end{equation}
+and we can learn parameters of the proposed model by minimizing the negative
+logarithmic likelihood $\arg \min_\theta \mathcal{L}(\mathcal{C})$, where
+$\theta$ is the parameter set in the model.
+We exploit back-propagation through time
+(BPTT)~\cite{chauvin1995backpropagation} for training. In each training
+iteration, we vectorize the propagation as inputs, including user embedding and
+temporal features. The embedding matrix of
 users is learned along with the training process. The temporal features
-are formalized, inlcuding logarithm time interval
+are formalized by logarithm time interval
 $\log(t_k-t_{k-1})$ and discretization of numerical attributes on year, month,
-day, week, hour, mininute and second. We adopt
-GRU~\cite{chung2014empirical} to encode the $k$-th inputs to propagation
-embeddings $h_k$. Back-propagation through time
-(BPTT)~\cite{chauvin1995backpropagation} is applied for parameter estimation.
-The parameters are iteratively updated by Adam~\cite{kingma2015method}, an
-efficient stochastic optimization algorithm with mini-batch techniques. 
+day, week, hour, mininute and second. 
+We adopt
+GRU~\cite{chung2014empirical} to encode the $k$-th inputs to
+$h_k$. 
+% Back-propagation through time
+% (BPTT)~\cite{chauvin1995backpropagation} is applied for parameter estimation.
+We apply stochastic gradient descent (SGD) with mini-batch and the parameters
+are updated by Adam~\cite{kingma2015method}.
 For speeding up the convergence, we use
 orthogonal initialization method~\cite{henaff2016orthogonal} in training
-process. We also
-employ early stopping method~\cite{prechelt1998automatic} to prevent
-overfitting. The stopping criterion is achieved when the performance has no
-more improvement in validation set. 
+process. We also employ early stopping method~\cite{prechelt1998automatic} and
+other techniques to prevent overfitting.
+
+
+% The $k$-th propagation is transformed into vector as inputs including user
+% embedding and temporal features. The embedding matrix of
+% users is learned along with the training process. The temporal features
+% are formalized, inlcuding logarithm time interval
+% $\log(t_k-t_{k-1})$ and discretization of numerical attributes on year, month,
+% day, week, hour, mininute and second. We adopt
+% GRU~\cite{chung2014empirical} to encode the $k$-th inputs to propagation
+% embeddings $h_k$. Back-propagation through time
+% (BPTT)~\cite{chauvin1995backpropagation} is applied for parameter estimation.
+% The parameters are iteratively updated by Adam~\cite{kingma2015method}, an
+% efficient stochastic optimization algorithm with mini-batch techniques. 
+% For speeding up the convergence, we use
+% orthogonal initialization method~\cite{henaff2016orthogonal} in training
+% process. We also
+% employ early stopping method~\cite{prechelt1998automatic} to prevent
+% overfitting. The stopping criterion is achieved when the performance has no
+% more improvement in validation set. 
