@@ -3,8 +3,8 @@
 In experiments, we compare our CYAN-RNN 
 to the state-of-the-art modeling methods of cascade prediction on both
 synthetic and real data. 
-The results show that CYAN-RNN can better model cascade dynamics
-and infer propagation structure.
+The results show that CYAN-RNN performs the best in modeling cascade dynamics
+and inferring propagation structure.
 
 \subsection{Baselines}
 % We choose Recurrent Marked Temporal Point Process (RMTPP)~\cite{DuKDD2016} as
@@ -20,11 +20,12 @@ and infer propagation structure.
 % next activated users or predicting next activated time for comparisons in two
 % prediction tasks.
 
-Rare methods can predict next propagations completely including both next
+Previous methods can seldom predict next propagations completely including both next
 activated users and time. To better illustrate the performance of our
-proposed model, we choose the state-of-the-art modeling methods for either
-predicting next activated users or predicting next activated time for comparisons in two
-prediction tasks.
+proposed model, we choose the state-of-the-art modeling methods that have at
+least one of the prediction abilities of 
+next activated user and next activated time for
+comparisons. 
 
 \begin{itemize}
   \item \textbf{RMTPP}~\cite{DuKDD2016}: Recurrent marked temporal point process
@@ -36,9 +37,9 @@ prediction tasks.
   models can be used to predict next activated users.
   \item \textbf{MC-1} Model: The markov chain model is a classic sequence
   modeling method, depicting the generation of activated users. Here
-  we compare with markov chain with order one.
+  we compare with markov chain with one-order dependency.
   \item \textbf{Poisson process} model~\cite{vere1988introduction}: It is a
-  stoachastic point process model, depicting the time consuming from one
+  stochastic point process model, depicting the time consuming from one
   propagation to another. The intensity function is parameterized by a constant.
   \item \textbf{Hawkes process} model~\cite{hawkes1971spectra}: It is a
   stochastic point process model where the intensity function is parameterized by
@@ -120,15 +121,15 @@ next activated user and time on real data.}
 
 \subsection{Synthetic Data and Results Anlaysis}
 The goal of the experiments on synthetic
-data is to understand how the underlying network structure and propagation
-model affect our proposed model on both cascade prediction and
+data is to understand how the underlying network structure and the propagation
+model (generating cascades) affect our proposed model on both cascade prediction and
 dependency structure inference. 
 
 \noindent{\textbf{Data generation}} 
 We use Kroneck
 generator~\cite{LeskovecICML07} to construct two types of networks with directed
 edges: 1) the Core-Periphery (CP) network~\cite{LeskovecWWW08} (Kroneck
-parameter matrix $[0.962, 0.535; 0.535, 0.107]$), mimicing real-world social networks; 2) the
+parameter matrix $[0.962, 0.535; 0.535, 0.107]$), mimicking real-world social networks; 2) the
 Erd\H{o}s-R{\'e}nyi random (Random) network~\cite{Erdos60} ($[0.5, 0.5; 0.5, 0.5]$). The incubation time
 of one user activating anther user are sampled from the two distributions: 1)
 mixed exponential (Exp) distributions, controlled by rate parameters $\alpha$
@@ -136,7 +137,7 @@ in $[0.01, 10]$; 2) mixed rayleigh (Ray) distribution, controlled
 by scale parameters $\beta$ in $[0.01, 10]$. To generate a
 cascade, we randomly choose a root user as the source of the cascade at first.
 For each neighbor of the activated user, its activated time is determined by
-incubation time. The propagation process will further conitune  in
+incubation time. The propagation process will further contiune  in
 breadth-first fashion until the overall time exceed the predefined observation
 time window or no new user being activated. In our experiments, we set the total
 number of users $|U|=32$ and the maximal observation time $\max\{t\}=100$.
